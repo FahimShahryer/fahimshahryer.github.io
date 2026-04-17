@@ -3,681 +3,651 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Fahim Shahryer - AI/ML Engineer Portfolio">
-    <title>Fahim Shahryer | AI/ML Engineer</title>
+    <meta name="description" content="Fahim Shahryer — AI/ML Engineer (MLOps). Production-grade LLM systems, agentic AI, and RAG pipelines.">
+    <meta name="theme-color" content="#0a0a0b">
+    <title>Fahim Shahryer — AI/ML Engineer (MLOps)</title>
     <link rel="stylesheet" href="css/style.css">
-    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- ========== HEADER / NAVBAR ========== -->
-    <header class="header" id="header">
-        <nav class="nav container">
-            <a href="#" class="nav__logo">Fahim Shahryer</a>
-            
-            <div class="nav__menu" id="nav-menu">
-                <ul class="nav__list">
-                    <li class="nav__item"><a href="#home" class="nav__link active-link">Home</a></li>
-                    <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
-                    <li class="nav__item"><a href="#experience" class="nav__link">Experience</a></li>
-                    <li class="nav__item"><a href="#projects" class="nav__link">Projects</a></li>
-                    <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
-                    <li class="nav__item"><a href="#awards" class="nav__link">Awards</a></li>
-                    <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
-                </ul>
-                <div class="nav__close" id="nav-close">
-                    <i class="fas fa-times"></i>
+
+<div class="scroll-progress" id="scroll-progress"></div>
+
+<!-- ========== HEADER ========== -->
+<header class="header" id="header">
+    <nav class="nav container">
+        <a href="#home" class="nav__logo">
+            <span class="nav__logo-mark">F</span>
+            <span>Fahim Shahryer</span>
+        </a>
+
+        <ul class="nav__list" id="nav-list">
+            <li><a href="#about" class="nav__link">About</a></li>
+            <li><a href="#experience" class="nav__link">Experience</a></li>
+            <li><a href="#projects" class="nav__link">Projects</a></li>
+            <li><a href="#skills" class="nav__link">Skills</a></li>
+            <li><a href="#awards" class="nav__link">Awards</a></li>
+            <li><a href="#contact" class="nav__link">Contact</a></li>
+            <button class="nav__close" id="nav-close" aria-label="Close menu"><i class="fas fa-times"></i></button>
+        </ul>
+
+        <div class="nav__actions">
+            <button class="theme-btn" id="theme-btn" aria-label="Toggle theme">
+                <i class="fas fa-sun" id="theme-icon"></i>
+            </button>
+            <button class="nav__toggle" id="nav-toggle" aria-label="Open menu"><i class="fas fa-bars"></i></button>
+        </div>
+    </nav>
+</header>
+
+<main>
+
+<!-- ========== HERO ========== -->
+<section class="hero" id="home">
+    <div class="container">
+        <div class="hero__grid">
+            <div class="hero__intro">
+                <span class="status-pill">
+                    <span class="status-pill__dot"></span>
+                    Available for new opportunities
+                </span>
+
+                <h1 class="hero__title">
+                    Fahim <span class="hero__title-accent">Shahryer</span>
+                </h1>
+
+                <p class="hero__role">
+                    <span class="hero__role-tag">~/</span>
+                    AI/ML Engineer · MLOps · Building production LLM systems
+                </p>
+
+                <p class="hero__desc">
+                    I design and ship production-grade LLM systems, agentic architectures,
+                    and RAG pipelines. 2+ years building multi-tenant SaaS AI platforms
+                    with FastAPI, LangGraph, and AWS — used by 100+ researchers and
+                    enterprise teams.
+                </p>
+
+                <div class="hero__actions">
+                    <a href="#experience" class="btn btn--primary">
+                        View Experience <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="assets/fahim_shahryer_2026.pdf" class="btn btn--ghost" download>
+                        <i class="fas fa-download"></i> Download CV
+                    </a>
+                </div>
+
+                <div class="hero__socials">
+                    <a href="https://github.com/fahimshahryer" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/fahim-shahryer/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="mailto:fhmshahryer@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="tel:+8801755235354" aria-label="Phone"><i class="fas fa-phone"></i></a>
                 </div>
             </div>
 
-            <div class="nav__toggle" id="nav-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
-        </nav>
-    </header>
-
-    <!-- ========== MAIN CONTENT ========== -->
-    <main class="main">
-        <!-- ========== HERO SECTION ========== -->
-        <section class="hero section" id="home">
-            <div class="hero__container container grid">
-                <div class="hero__content">
-                    <h1 class="hero__title">
-                        Hi, I'm <span class="hero__name">Fahim Shahryer</span>
-                    </h1>
-                    <h2 class="hero__subtitle">AI/ML Engineer</h2>
-                    <p class="hero__description">
-                        Building practical AI solutions with 2 years of experience in LLM integration, 
-                        agentic architectures, and computer vision. Passionate about solving complex problems 
-                        and bringing ML projects from concept to deployment.
-                    </p>
-                    <div class="hero__buttons">
-                        <a href="#projects" class="button button__primary">View Projects</a>
-                        <a href="assets/resume.pdf" class="button button__secondary" download>
-                            <i class="fas fa-download"></i> Download Resume
-                        </a>
-                    </div>
-                    <div class="hero__social">
-                        <a href="https://github.com/fahimshahryer" target="_blank" class="hero__social-link">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/fahim-shahryer/" target="_blank" class="hero__social-link">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="mailto:fhmshahryer@gmail.com" class="hero__social-link">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                    </div>
+            <div class="hero__visual">
+                <div class="hero__img-frame">
+                    <img src="assets/profile.jpg" alt="Fahim Shahryer" loading="eager">
                 </div>
-                <div class="hero__image">
-                    <div class="hero__blob">
-                        <img src="assets/profile.jpg" alt="Fahim Shahryer" class="hero__img">
+                <div class="hero__badge">
+                    <i class="fas fa-bolt"></i>
+                    <div>
+                        <strong>Currently shipping</strong>
+                        <span>Actionboard AI · Cloudscockpit</span>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <!-- ========== ABOUT / PROFESSIONAL SUMMARY ========== -->
-        <section class="about section" id="about">
-            <div class="container">
-                <h2 class="section__title">Professional Summary</h2>
-                <div class="about__container grid">
-                    <div class="about__content">
-                        <p class="about__description">
-                            AI/ML Engineer with 2 years of hands-on experience building practical AI solutions 
-                            including agentic architecture and RAG frameworks. I've worked on LLM integration 
-                            projects, developed document validation tools, and created an AutoML platform that's 
-                            currently used by 100+ researchers.
-                        </p>
-                        <p class="about__description">
-                            I'm passionate about solving complex problems with AI and have experience working 
-                            with cross-functional teams to bring ML projects from concept to deployment.
-                        </p>
-                        <div class="about__info">
-                            <div class="about__box">
-                                <i class="fas fa-briefcase about__icon"></i>
-                                <h3 class="about__box-title">2+ Years</h3>
-                                <span class="about__box-subtitle">Experience</span>
-                            </div>
-                            <div class="about__box">
-                                <i class="fas fa-trophy about__icon"></i>
-                                <h3 class="about__box-title">7+</h3>
-                                <span class="about__box-subtitle">Awards Won</span>
-                            </div>
-                            <div class="about__box">
-                                <i class="fas fa-project-diagram about__icon"></i>
-                                <h3 class="about__box-title">6+</h3>
-                                <span class="about__box-subtitle">Projects Completed</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <!-- Stats strip -->
+        <div class="hero__stats reveal">
+            <div class="hero__stat">
+                <div class="hero__stat-value"><span class="accent">2+</span> yrs</div>
+                <div class="hero__stat-label">Production AI engineering</div>
             </div>
-        </section>
-
-        <!-- ========== EXPERIENCE SECTION ========== -->
-        <section class="experience section" id="experience">
-            <div class="container">
-                <h2 class="section__title">Professional Experience</h2>
-                <div class="experience__container">
-                    <!-- Experience Item 1 -->
-                    <div class="experience__item fade-in">
-                        <div class="experience__header">
-                            <div class="experience__title-group">
-                                <h3 class="experience__title">AI/ML Engineer</h3>
-                                <span class="experience__company">Periscope Labs</span>
-                            </div>
-                            <span class="experience__date">Jan 2025 - Present</span>
-                        </div>
-                        <ul class="experience__list">
-                            <li class="experience__item-detail">
-                                Led Agentic AI framework for document validation using RAG architecture and 
-                                multi-LLM approach (OpenAI, Mistral AI) to automatically validate invoices 
-                                and policy documents against business rules, <strong>reducing manual review by 70%</strong>
-                            </li>
-                            <li class="experience__item-detail">
-                                Engineered an admin dashboard for policy document management and control with 
-                                annotation pipeline that identifies and marks policy violations directly in documents
-                            </li>
-                            <li class="experience__item-detail">
-                                Designed loan default prediction pipeline using time series analysis and feature 
-                                engineering, creating an early warning system that identifies at-risk customers 
-                                30 days in advance with <strong>75% prediction accuracy</strong>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- Experience Item 2 -->
-                    <div class="experience__item fade-in">
-                        <div class="experience__header">
-                            <div class="experience__title-group">
-                                <h3 class="experience__title">Research Assistant</h3>
-                                <span class="experience__company">Quantum Robotics & Automation Research Group, MIST</span>
-                            </div>
-                            <span class="experience__date">Jan 2024 - May 2025</span>
-                        </div>
-                        <ul class="experience__list">
-                            <li class="experience__item-detail">
-                                Engineered an end-to-end AutoML solution (AKI) assisting <strong>100+ researchers</strong> 
-                                with intuitive flow covering data upload, preprocessing, visualization, model training, 
-                                and deployment, eliminating coding barriers
-                            </li>
-                            <li class="experience__item-detail">
-                                Built computer vision and AI-based assistive interface achieving <strong>92% accuracy</strong> 
-                                in eye movement tracking, empowering paralyzed and post-surgery patients with 
-                                voice- and hand-free communication capabilities
-                            </li>
-                            <li class="experience__item-detail">
-                                Directed 3 cutting-edge AI research projects contributing to research publications 
-                                while mentoring 7+ junior researchers in machine learning projects
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- Experience Item 3 -->
-                    <div class="experience__item fade-in">
-                        <div class="experience__header">
-                            <div class="experience__title-group">
-                                <h3 class="experience__title">EDGE-AI Trainee</h3>
-                                <span class="experience__company">ITIL - World Bank Funded Program</span>
-                            </div>
-                            <span class="experience__date">Aug 2023 - Nov 2023</span>
-                        </div>
-                        <ul class="experience__list">
-                            <li class="experience__item-detail">
-                                Completed intensive 160-hour AI specialization program funded by World Bank in 
-                                partnership with Bangladesh Computer Council, focusing on enterprise-level AI 
-                                implementation strategies
-                            </li>
-                            <li class="experience__item-detail">
-                                Mastered industry best practices in AI deployment, model optimization, and production 
-                                workflows, achieving <strong>top 5% performance</strong> in program assessments and practical projects
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Education -->
-                <div class="education__container">
-                    <h3 class="education__title">Education</h3>
-                    <div class="education__item fade-in">
-                        <div class="education__header">
-                            <div>
-                                <h4 class="education__degree">BSc in Computer Science and Engineering</h4>
-                                <span class="education__university">Military Institute of Science and Technology (MIST)</span>
-                            </div>
-                            <span class="education__date">Feb 2019 - Jan 2024</span>
-                        </div>
-                        <p class="education__gpa">GPA: 3.18/4.00</p>
-                        <p class="education__thesis">
-                            <strong>Thesis:</strong> Development of an intelligent system for eye motion tracking and action prediction
-                        </p>
-                    </div>
-                </div>
+            <div class="hero__stat">
+                <div class="hero__stat-value"><span class="accent">100+</span></div>
+                <div class="hero__stat-label">Researchers using AKI</div>
             </div>
-        </section>
-
-        <!-- ========== PROJECTS SECTION ========== -->
-        <section class="projects section" id="projects">
-            <div class="container">
-                <h2 class="section__title">Key Projects</h2>
-                <div class="projects__container grid">
-                    <!-- Project Card 1 -->
-                    <div class="project__card fade-in">
-                        <div class="project__content">
-                            <h3 class="project__title">Automated Document Processor</h3>
-                            <p class="project__description">
-                                Agentic AI system for automated document validation using RAG architecture and 
-                                multi-LLM approach. Validates invoices and policy documents against business rules.
-                            </p>
-                            <div class="project__tech">
-                                <span class="tech__tag">Python</span>
-                                <span class="tech__tag">LangChain</span>
-                                <span class="tech__tag">LLMs</span>
-                                <span class="tech__tag">RAG</span>
-                                <span class="tech__tag">Mistral</span>
-                                <span class="tech__tag">Weaviate</span>
-                                <span class="tech__tag">Docker</span>
-                            </div>
-                            <div class="project__links">
-                                <a href="https://drive.google.com/drive/folders/1fPit_76dNBvrrv7-ERA-XgEzFv8oVC-n" class="project__link" target="_blank">
-                                    <i class="fas fa-external-link-alt"></i> Demo
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project Card 2 -->
-                    <div class="project__card fade-in">
-                        <div class="project__content">
-                            <h3 class="project__title">NexNews - AI News Fact Checker</h3>
-                            <p class="project__description">
-                                AI-powered fact-checking system that validates news articles using multiple sources 
-                                and LLM agents for cross-verification and credibility scoring.
-                            </p>
-                            <div class="project__tech">
-                                <span class="tech__tag">Python</span>
-                                <span class="tech__tag">LLMs</span>
-                                <span class="tech__tag">AI Agents</span>
-                                <span class="tech__tag">News API</span>
-                                <span class="tech__tag">Web Scraping</span>
-                            </div>
-                            <div class="project__links">
-                                <a href="https://drive.google.com/drive/folders/1b55EJlqMJk_JE9qoDyiPvlutZOVvmRPa?usp=sharing" class="project__link" target="_blank">
-                                    <i class="fas fa-external-link-alt"></i> Demo
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project Card 3 -->
-                    <div class="project__card fade-in">
-                        <div class="project__content">
-                            <h3 class="project__title">AutoML - Artificial Kinetic Intelligence (AKI)</h3>
-                            <p class="project__description">
-                                End-to-end AutoML platform assisting 100+ researchers with data preprocessing, 
-                                visualization, model training, and deployment without coding requirements.
-                            </p>
-                            <div class="project__tech">
-                                <span class="tech__tag">Scikit-Learn</span>
-                                <span class="tech__tag">ML Algorithms</span>
-                                <span class="tech__tag">Plotly</span>
-                                <span class="tech__tag">Python</span>
-                                <span class="tech__tag">MongoDB</span>
-                            </div>
-                            <div class="project__links">
-                                <a href="https://drive.google.com/drive/folders/1_AnxoNO1xu7xcAOgB9-o-WnhXnMPmul6?usp=sharing" class="project__link" target="_blank">
-                                    <i class="fas fa-external-link-alt"></i> Demo
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project Card 4 -->
-                    <div class="project__card fade-in">
-                        <div class="project__content">
-                            <h3 class="project__title">Eye Motion Tracking System</h3>
-                            <p class="project__description">
-                                AI-based assistive interface with 92% accuracy in eye movement tracking, enabling 
-                                paralyzed patients to communicate without voice or hand controls.
-                            </p>
-                            <div class="project__tech">
-                                <span class="tech__tag">Scikit-Learn</span>
-                                <span class="tech__tag">TensorFlow</span>
-                                <span class="tech__tag">Computer Vision</span>
-                                <span class="tech__tag">Python</span>
-                            </div>
-                            <div class="project__links">
-                                <a href="https://youtube.com/watch?v=x9VaKQbCiv4" class="project__link" target="_blank">
-                                    <i class="fas fa-external-link-alt"></i> Demo
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project Card 5 -->
-                    <div class="project__card fade-in">
-                        <div class="project__content">
-                            <h3 class="project__title">Remote Robotic Hand Control</h3>
-                            <p class="project__description">
-                                Computer vision-based system for controlling robotic hands remotely using 
-                                Arduino and real-time gesture recognition algorithms.
-                            </p>
-                            <div class="project__tech">
-                                <span class="tech__tag">Computer Vision</span>
-                                <span class="tech__tag">Arduino</span>
-                                <span class="tech__tag">Robotics</span>
-                                <span class="tech__tag">Python</span>
-                            </div>
-                            <div class="project__links">
-                                <a href="https://youtube.com/watch?v=zFxJ8xNH6yM" class="project__link" target="_blank">
-                                    <i class="fas fa-external-link-alt"></i> Demo
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project Card 6 -->
-                    <div class="project__card fade-in">
-                        <div class="project__content">
-                            <h3 class="project__title">Child Companion AI Robot</h3>
-                            <p class="project__description">
-                                Interactive AI robot companion with computer vision, neural networks, and IoT 
-                                integration for educational and entertainment purposes.
-                            </p>
-                            <div class="project__tech">
-                                <span class="tech__tag">Computer Vision</span>
-                                <span class="tech__tag">Neural Network</span>
-                                <span class="tech__tag">Flutter</span>
-                                <span class="tech__tag">IoT</span>
-                                <span class="tech__tag">Raspberry Pi</span>
-                                <span class="tech__tag">Arduino</span>
-                            </div>
-                            <div class="project__links">
-                                <a href="https://youtube.com/watch?v=tHxzrk2d1Vw" class="project__link" target="_blank">
-                                    <i class="fas fa-external-link-alt"></i> Demo
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="hero__stat">
+                <div class="hero__stat-value"><span class="accent">4</span></div>
+                <div class="hero__stat-label">LLM providers integrated</div>
             </div>
-        </section>
-
-        <!-- ========== SKILLS SECTION ========== -->
-        <section class="skills section" id="skills">
-            <div class="container">
-                <h2 class="section__title">Technical Expertise</h2>
-                <div class="skills__container grid">
-                    <!-- Specializations -->
-                    <div class="skills__category fade-in">
-                        <h3 class="skills__category-title">
-                            <i class="fas fa-brain"></i> Specializations
-                        </h3>
-                        <div class="skills__tags">
-                            <span class="skill__tag">LLMs</span>
-                            <span class="skill__tag">Agentic AI</span>
-                            <span class="skill__tag">RAG</span>
-                            <span class="skill__tag">Computer Vision</span>
-                            <span class="skill__tag">Fine Tuning LLMs</span>
-                            <span class="skill__tag">NLP</span>
-                        </div>
-                    </div>
-
-                    <!-- AI/ML Frameworks -->
-                    <div class="skills__category fade-in">
-                        <h3 class="skills__category-title">
-                            <i class="fas fa-robot"></i> AI/ML Frameworks
-                        </h3>
-                        <div class="skills__tags">
-                            <span class="skill__tag">Deep Neural Networks</span>
-                            <span class="skill__tag">TensorFlow</span>
-                            <span class="skill__tag">PyTorch</span>
-                            <span class="skill__tag">Scikit-Learn</span>
-                            <span class="skill__tag">LangChain</span>
-                            <span class="skill__tag">LlamaIndex</span>
-                            <span class="skill__tag">OpenCV</span>
-                        </div>
-                    </div>
-
-                    <!-- Cloud & DevOps -->
-                    <div class="skills__category fade-in">
-                        <h3 class="skills__category-title">
-                            <i class="fas fa-cloud"></i> Cloud & DevOps
-                        </h3>
-                        <div class="skills__tags">
-                            <span class="skill__tag">AWS</span>
-                            <span class="skill__tag">GCP</span>
-                            <span class="skill__tag">Docker</span>
-                            <span class="skill__tag">Git</span>
-                        </div>
-                    </div>
-
-                    <!-- Programming Languages -->
-                    <div class="skills__category fade-in">
-                        <h3 class="skills__category-title">
-                            <i class="fas fa-code"></i> Programming Languages
-                        </h3>
-                        <div class="skills__tags">
-                            <span class="skill__tag">Python</span>
-                            <span class="skill__tag">C/C++</span>
-                            <span class="skill__tag">SQL</span>
-                            <span class="skill__tag">MATLAB</span>
-                        </div>
-                    </div>
-
-                    <!-- Databases -->
-                    <div class="skills__category fade-in">
-                        <h3 class="skills__category-title">
-                            <i class="fas fa-database"></i> Databases
-                        </h3>
-                        <div class="skills__tags">
-                            <span class="skill__tag">MongoDB</span>
-                            <span class="skill__tag">Weaviate</span>
-                            <span class="skill__tag">FAISS</span>
-                            <span class="skill__tag">Vector DBs</span>
-                        </div>
-                    </div>
-
-                    <!-- Tools & APIs -->
-                    <div class="skills__category fade-in">
-                        <h3 class="skills__category-title">
-                            <i class="fas fa-tools"></i> Tools & APIs
-                        </h3>
-                        <div class="skills__tags">
-                            <span class="skill__tag">n8n</span>
-                            <span class="skill__tag">Streamlit</span>
-                            <span class="skill__tag">FastAPI</span>
-                            <span class="skill__tag">Jupyter</span>
-                            <span class="skill__tag">LLM API Integration</span>
-                            <span class="skill__tag">News API</span>
-                            <span class="skill__tag">Web Scraping</span>
-                        </div>
-                    </div>
-
-                    <!-- Soft Skills -->
-                    <div class="skills__category fade-in">
-                        <h3 class="skills__category-title">
-                            <i class="fas fa-users"></i> Soft Skills
-                        </h3>
-                        <div class="skills__tags">
-                            <span class="skill__tag">Leadership</span>
-                            <span class="skill__tag">Collaboration</span>
-                            <span class="skill__tag">Research</span>
-                        </div>
-                    </div>
-                </div>
+            <div class="hero__stat">
+                <div class="hero__stat-value"><span class="accent">7+</span></div>
+                <div class="hero__stat-label">Awards &amp; recognitions</div>
             </div>
-        </section>
+        </div>
+    </div>
+</section>
 
-        <!-- ========== AWARDS SECTION ========== -->
-        <section class="awards section" id="awards">
-            <div class="container">
-                <h2 class="section__title">Awards & Recognition</h2>
-                <div class="awards__container grid">
-                    <!-- Award Item 1 -->
-                    <div class="award__card fade-in">
-                        <div class="award__icon">
-                            <i class="fas fa-trophy"></i>
-                        </div>
-                        <h3 class="award__title">Champion - AI Hackathon 2025</h3>
-                        <p class="award__organization">Bangladesh Innovation Conclave</p>
-                        <p class="award__description">
-                            Managed a team of 3, designed an AI application for healthcare sector
-                        </p>
-                        <a href="https://drive.google.com/file/d/1sVeLJ8Zpie8gxOW7krSu9ef_Pc80voIA/view?usp=sharing" class="award__certificate" target="_blank">
-                            <i class="fas fa-certificate"></i> View Certificate
-                        </a>
-                    </div>
-
-                    <!-- Award Item 2 -->
-                    <div class="award__card fade-in">
-                        <div class="award__icon">
-                            <i class="fas fa-medal"></i>
-                        </div>
-                        <h3 class="award__title">Highest-Ranked Submission - BEAR Summit 2025</h3>
-                        <p class="award__organization">AI Onsite Display</p>
-                        <p class="award__description">
-                            Code AI-048 — Qualified for on-site display
-                        </p>
-                        <a href="https://drive.google.com/file/d/1p-nL0_HFF0uoHyOBAjxm61-rAcMr52Rg/view?usp=sharing" class="award__certificate" target="_blank">
-                            <i class="fas fa-certificate"></i> View Certificate
-                        </a>
-                    </div>
-
-                    <!-- Award Item 3 -->
-                    <div class="award__card fade-in">
-                        <div class="award__icon">
-                            <i class="fas fa-award"></i>
-                        </div>
-                        <h3 class="award__title">1st Runner-Up - BEAR Summit 2025</h3>
-                        <p class="award__organization">Bangladesh National Semiconductor Symposium</p>
-                        <p class="award__description">
-                            AI Demo - submission code AI-047
-                        </p>
-                        <a href="https://drive.google.com/file/d/1HKxTWSGQmkEBbRNWffMFzW2rEyZNQW-2/view?usp=sharing" class="award__certificate" target="_blank">
-                            <i class="fas fa-certificate"></i> View Certificate
-                        </a>
-                    </div>
-
-                    <!-- Award Item 4 -->
-                    <div class="award__card fade-in">
-                        <div class="award__icon">
-                            <i class="fas fa-globe"></i>
-                        </div>
-                        <h3 class="award__title">Global Champion - University Rover Challenge</h3>
-                        <p class="award__organization">The Mars Society</p>
-                        <p class="award__description">
-                            Competed against 20+ teams worldwide
-                        </p>
-                        <a href="#" class="award__certificate" target="_blank">
-                            <i class="fas fa-certificate"></i> View Certificate
-                        </a>
-                    </div>
-
-                    <!-- Award Item 5 -->
-                    <div class="award__card fade-in">
-                        <div class="award__icon">
-                            <i class="fas fa-certificate"></i>
-                        </div>
-                        <h3 class="award__title">21st Century Employability Skilling Program</h3>
-                        <p class="award__organization">Wadhwani Foundation</p>
-                        <p class="award__description">
-                            Advanced professional development certification
-                        </p>
-                        <a href="https://web.certificate.wfglobal.org/en/certificate?certificateId=65786bd98c30de8667beaa7e" class="award__certificate" target="_blank">
-                            <i class="fas fa-certificate"></i> View Certificate
-                        </a>
-                    </div>
-
-                    <!-- Award Item 6 -->
-                    <div class="award__card fade-in">
-                        <div class="award__icon">
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h3 class="award__title">EDGE-AI Certification</h3>
-                        <p class="award__organization">Top 5% performance — Internship</p>
-                        <p class="award__description">
-                            World Bank funded program - Advanced AI specialization
-                        </p>
-                        <a href="https://drive.google.com/file/d/1QCDdYeHA88LXqTvJmktVh7juUbHuvG8u/view?usp=sharing" class="award__certificate" target="_blank">
-                            <i class="fas fa-certificate"></i> View Certificate
-                        </a>
-                    </div>
-
-                    <!-- Award Item 7 -->
-                    <div class="award__card fade-in">
-                        <div class="award__icon">
-                            <i class="fas fa-ranking-star"></i>
-                        </div>
-                        <h3 class="award__title">5th Place - Technovent 2023 Hackathon</h3>
-                        <p class="award__organization">SUST</p>
-                        <p class="award__description">
-                            48-hour AI/ML innovation challenge
-                        </p>
-                        <a href="#" class="award__certificate" target="_blank">
-                            <i class="fas fa-certificate"></i> View Certificate
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ========== CONTACT SECTION ========== -->
-        <section class="contact section" id="contact">
-            <div class="container">
-                <h2 class="section__title">Get In Touch</h2>
-                <div class="contact__container grid">
-                    <div class="contact__info fade-in">
-                        <h3 class="contact__subtitle">Let's Connect</h3>
-                        <p class="contact__description">
-                            I'm always open to discussing new projects, creative ideas, or opportunities 
-                            to be part of your visions. Feel free to reach out!
-                        </p>
-                        
-                        <div class="contact__cards">
-                            <div class="contact__card">
-                                <i class="fas fa-envelope contact__card-icon"></i>
-                                <h4 class="contact__card-title">Email</h4>
-                                <a href="mailto:fhmshahryer@gmail.com" class="contact__card-data">
-                                    fhmshahryer@gmail.com
-                                </a>
-                            </div>
-
-                            <div class="contact__card">
-                                <i class="fas fa-phone contact__card-icon"></i>
-                                <h4 class="contact__card-title">Phone</h4>
-                                <a href="tel:+8801755235354" class="contact__card-data">
-                                    +880-1755235354
-                                </a>
-                            </div>
-
-                            <div class="contact__card">
-                                <i class="fas fa-map-marker-alt contact__card-icon"></i>
-                                <h4 class="contact__card-title">Location</h4>
-                                <span class="contact__card-data">Dhaka, Bangladesh</span>
-                            </div>
-                        </div>
-
-                        <div class="contact__social">
-                            <a href="https://github.com/fahimshahryer" target="_blank" class="contact__social-link">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="https://www.linkedin.com/in/fahim-shahryer/" target="_blank" class="contact__social-link">
-                                <i class="fab fa-linkedin"></i>
-                            </a>
-                            <a href="mailto:fhmshahryer@gmail.com" class="contact__social-link">
-                                <i class="fas fa-envelope"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- ========== FOOTER ========== -->
-    <footer class="footer">
-        <div class="footer__container container">
-            <div class="footer__content">
-                <h3 class="footer__title">Fahim Shahryer</h3>
-                <p class="footer__description">AI/ML Engineer crafting intelligent solutions</p>
-            </div>
-
-            <div class="footer__links">
-                <a href="#home" class="footer__link">Home</a>
-                <a href="#about" class="footer__link">About</a>
-                <a href="#experience" class="footer__link">Experience</a>
-                <a href="#projects" class="footer__link">Projects</a>
-                <a href="#skills" class="footer__link">Skills</a>
-                <a href="#awards" class="footer__link">Awards</a>
-                <a href="#contact" class="footer__link">Contact</a>
-            </div>
-
-            <div class="footer__social">
-                <a href="https://github.com/fahimshahryer" target="_blank" class="footer__social-link">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/fahim-shahryer/" target="_blank" class="footer__social-link">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="mailto:fhmshahryer@gmail.com" class="footer__social-link">
-                    <i class="fas fa-envelope"></i>
-                </a>
-            </div>
-
-            <p class="footer__copy">
-                &copy; 2025 Fahim Shahryer. All rights reserved.
+<!-- ========== ABOUT ========== -->
+<section class="section section--alt" id="about">
+    <div class="container">
+        <div class="reveal">
+            <div class="section__label">01 / About</div>
+            <h2 class="section__title">From first principles to<br>production-grade systems.</h2>
+            <p class="section__lede">
+                I focus on robust system design, cost-aware inference, and real-world
+                deployment — not experimental prototypes.
             </p>
         </div>
-    </footer>
 
-    <!-- ========== SCROLL UP BUTTON ========== -->
-    <a href="#" class="scrollup" id="scroll-up">
-        <i class="fas fa-arrow-up scrollup__icon"></i>
-    </a>
+        <div class="about__grid">
+            <div class="about__bio reveal">
+                <p>
+                    I'm <strong>Fahim Shahryer</strong>, an AI/ML Engineer (MLOps) with 2+ years
+                    of experience designing and deploying production-grade LLM systems,
+                    agentic architectures, and Retrieval-Augmented Generation (RAG) pipelines.
+                </p>
+                <p>
+                    I've built multi-LLM orchestration platforms, multi-tenant SaaS AI
+                    products, and scalable backends with <strong>FastAPI, LangGraph, and AWS</strong>.
+                    My work has shipped to <strong>100+ researchers</strong> and enterprise
+                    teams across healthcare, fintech, and document automation.
+                </p>
+                <p>
+                    Beyond the build, I think hard about <strong>system design</strong>,
+                    cost-aware inference, and end-to-end ML lifecycle — because the
+                    interesting problem is rarely the model.
+                </p>
+            </div>
 
-    <!-- ========== MAIN JS ========== -->
-    <script src="js/main.js"></script>
+            <div class="capabilities reveal">
+                <div class="capability">
+                    <div class="capability__icon"><i class="fas fa-network-wired"></i></div>
+                    <div>
+                        <div class="capability__title">LLM Systems &amp; RAG</div>
+                        <div class="capability__desc">Production RAG pipelines, embedding workflows, semantic retrieval, multi-LLM orchestration.</div>
+                    </div>
+                </div>
+                <div class="capability">
+                    <div class="capability__icon"><i class="fas fa-robot"></i></div>
+                    <div>
+                        <div class="capability__title">Agentic Architecture</div>
+                        <div class="capability__desc">Multi-step reasoning frameworks, tool use, MCP servers, agent orchestration.</div>
+                    </div>
+                </div>
+                <div class="capability">
+                    <div class="capability__icon"><i class="fas fa-server"></i></div>
+                    <div>
+                        <div class="capability__title">Multi-tenant SaaS Backends</div>
+                        <div class="capability__desc">FastAPI, LangGraph, real-time streaming, role-based access, tenant isolation.</div>
+                    </div>
+                </div>
+                <div class="capability">
+                    <div class="capability__icon"><i class="fab fa-aws"></i></div>
+                    <div>
+                        <div class="capability__title">Cloud &amp; MLOps</div>
+                        <div class="capability__desc">AWS ECS/EC2/RDS/S3, Cognito, ElastiCache, Docker, GitHub Actions CI/CD.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== EXPERIENCE ========== -->
+<section class="section" id="experience">
+    <div class="container">
+        <div class="reveal">
+            <div class="section__label">02 / Experience</div>
+            <h2 class="section__title">Building things people use.</h2>
+            <p class="section__lede">A timeline of roles, products, and impact.</p>
+        </div>
+
+        <div class="timeline">
+            <div class="exp is-current reveal">
+                <div class="exp__node"></div>
+                <div class="exp__head">
+                    <h3 class="exp__role">MLOps Engineer</h3>
+                    <span class="exp__company">Cloudscockpit</span>
+                    <span class="exp__date">Oct 2025 — Present</span>
+                </div>
+                <ul class="exp__list">
+                    <li>Architected and deployed <strong>Actionboard AI</strong>, a multi-tenant AI-powered project management SaaS built around conversational agents — structured task planning, document analysis, and role-based guidance via natural chat.</li>
+                    <li>Designed a production-grade <strong>RAG pipeline</strong> with global and tenant-level knowledge bases — document ingestion (PDF, DOCX) via AWS S3, chunking, embedding, and semantic retrieval using PostgreSQL pgvector.</li>
+                    <li>Integrated multiple LLM providers (<strong>OpenAI, Anthropic, Gemini, Grok</strong>) and built a custom multi-step reasoning framework (RAOARA) for structured task decomposition and agent orchestration.</li>
+                    <li>Built scalable multi-tenant infra with <strong>FastAPI, LangGraph, Neo4j, Redis</strong>, AWS (ECS, EC2, RDS, Cognito, ElastiCache) — real-time streaming, MCP tool servers, and tenant-level token usage analytics.</li>
+                </ul>
+            </div>
+
+            <div class="exp reveal">
+                <div class="exp__node"></div>
+                <div class="exp__head">
+                    <h3 class="exp__role">AI/ML Engineer</h3>
+                    <span class="exp__company">Periscope Labs, Dhaka</span>
+                    <span class="exp__date">Apr 2025 — Oct 2025</span>
+                </div>
+                <ul class="exp__list">
+                    <li>Led an <strong>Agentic AI</strong> framework for document validation using RAG and a multi-LLM approach (OpenAI, Mistral) to validate invoices and policy documents — <strong>reduced manual review by 70%</strong>.</li>
+                    <li>Engineered an admin dashboard for policy document management with an annotation pipeline that marks policy violations directly in source documents.</li>
+                    <li>Designed a loan default prediction pipeline using time series analysis and feature engineering — early-warning system identifying at-risk customers 30 days in advance with <strong>75% accuracy</strong>.</li>
+                </ul>
+            </div>
+
+            <div class="exp reveal">
+                <div class="exp__node"></div>
+                <div class="exp__head">
+                    <h3 class="exp__role">Research Assistant</h3>
+                    <span class="exp__company">Quantum Robotics &amp; Automation Research Group, MIST</span>
+                    <span class="exp__date">Jan 2024 — May 2025</span>
+                </div>
+                <ul class="exp__list">
+                    <li>Engineered an end-to-end <strong>AutoML</strong> platform (AKI) used by <strong>100+ researchers</strong> — data upload, preprocessing, visualization, model training, and deployment with no coding required.</li>
+                    <li>Built a computer vision assistive interface achieving <strong>92% accuracy</strong> in eye-movement tracking — enabling voice- and hand-free communication for paralyzed and post-surgery patients.</li>
+                    <li>Directed 3 AI research projects contributing to publications and mentored 7+ junior researchers.</li>
+                </ul>
+            </div>
+
+            <div class="exp reveal">
+                <div class="exp__node"></div>
+                <div class="exp__head">
+                    <h3 class="exp__role">EDGE-AI Trainee</h3>
+                    <span class="exp__company">ITIL · World Bank Funded Program</span>
+                    <span class="exp__date">Aug 2023 — Nov 2023</span>
+                </div>
+                <ul class="exp__list">
+                    <li>Completed a 160-hour AI specialization program in partnership with Bangladesh Computer Council, focused on enterprise-level AI deployment.</li>
+                    <li>Top <strong>5% performance</strong> in program assessments and practical projects.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Education -->
+        <div class="edu reveal">
+            <div class="edu__icon"><i class="fas fa-graduation-cap"></i></div>
+            <div>
+                <div class="edu__degree">BSc in Computer Science &amp; Engineering</div>
+                <div class="edu__school">
+                    Military Institute of Science and Technology (MIST), Dhaka
+                    <span class="gpa">GPA 3.18 / 4.00</span>
+                </div>
+            </div>
+            <div class="edu__date">Feb 2019 — Dec 2023</div>
+            <p class="edu__thesis">
+                <strong>Thesis:</strong> Development of an intelligent system for eye motion tracking and action prediction.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ========== PROJECTS ========== -->
+<section class="section section--alt" id="projects">
+    <div class="container">
+        <div class="reveal">
+            <div class="section__label">03 / Projects</div>
+            <h2 class="section__title">Selected work.</h2>
+            <p class="section__lede">A few systems I've designed, shipped, and learned from.</p>
+        </div>
+
+        <div class="projects__grid">
+            <article class="project reveal">
+                <div class="project__num">01</div>
+                <h3 class="project__title">Automated Document Processor</h3>
+                <p class="project__desc">
+                    Agentic AI system for automated document validation using RAG architecture
+                    and a multi-LLM approach. Validates invoices and policy documents against
+                    business rules.
+                </p>
+                <div class="project__tech">
+                    <span class="tech">Python</span>
+                    <span class="tech">LangChain</span>
+                    <span class="tech">RAG</span>
+                    <span class="tech">Mistral</span>
+                    <span class="tech">Weaviate</span>
+                    <span class="tech">Docker</span>
+                </div>
+                <a href="https://drive.google.com/drive/folders/1fPit_76dNBvrrv7-ERA-XgEzFv8oVC-n" class="project__link" target="_blank" rel="noopener">
+                    View demo <i class="fas fa-arrow-up-right-from-square"></i>
+                </a>
+            </article>
+
+            <article class="project reveal">
+                <div class="project__num">02</div>
+                <h3 class="project__title">NexNews — AI Fact Checker</h3>
+                <p class="project__desc">
+                    AI-powered fact-checking system that validates news articles using
+                    multiple sources and LLM agents for cross-verification and credibility
+                    scoring.
+                </p>
+                <div class="project__tech">
+                    <span class="tech">Python</span>
+                    <span class="tech">LLMs</span>
+                    <span class="tech">AI Agents</span>
+                    <span class="tech">News API</span>
+                    <span class="tech">Web Scraping</span>
+                </div>
+                <a href="https://drive.google.com/drive/folders/1b55EJlqMJk_JE9qoDyiPvlutZOVvmRPa?usp=sharing" class="project__link" target="_blank" rel="noopener">
+                    View demo <i class="fas fa-arrow-up-right-from-square"></i>
+                </a>
+            </article>
+
+            <article class="project reveal">
+                <div class="project__num">03</div>
+                <h3 class="project__title">AKI — Artificial Kinetic Intelligence</h3>
+                <p class="project__desc">
+                    End-to-end AutoML platform assisting 100+ researchers with data
+                    preprocessing, visualization, model training, and deployment — without
+                    writing code.
+                </p>
+                <div class="project__tech">
+                    <span class="tech">Scikit-Learn</span>
+                    <span class="tech">Python</span>
+                    <span class="tech">Plotly</span>
+                    <span class="tech">MongoDB</span>
+                </div>
+                <a href="https://drive.google.com/drive/folders/1_AnxoNO1xu7xcAOgB9-o-WnhXnMPmul6?usp=sharing" class="project__link" target="_blank" rel="noopener">
+                    View demo <i class="fas fa-arrow-up-right-from-square"></i>
+                </a>
+            </article>
+
+            <article class="project reveal">
+                <div class="project__num">04</div>
+                <h3 class="project__title">Eye Motion Tracking System</h3>
+                <p class="project__desc">
+                    AI-based assistive interface achieving 92% accuracy in eye movement
+                    tracking — enabling paralyzed patients to communicate without voice or
+                    hand controls.
+                </p>
+                <div class="project__tech">
+                    <span class="tech">TensorFlow</span>
+                    <span class="tech">Computer Vision</span>
+                    <span class="tech">Scikit-Learn</span>
+                    <span class="tech">Python</span>
+                </div>
+                <a href="https://youtube.com/watch?v=x9VaKQbCiv4" class="project__link" target="_blank" rel="noopener">
+                    View demo <i class="fas fa-arrow-up-right-from-square"></i>
+                </a>
+            </article>
+
+            <article class="project reveal">
+                <div class="project__num">05</div>
+                <h3 class="project__title">Remote Robotic Hand Control</h3>
+                <p class="project__desc">
+                    Computer vision-based system for controlling robotic hands remotely
+                    using Arduino and real-time gesture recognition.
+                </p>
+                <div class="project__tech">
+                    <span class="tech">Computer Vision</span>
+                    <span class="tech">Arduino</span>
+                    <span class="tech">Robotics</span>
+                    <span class="tech">Python</span>
+                </div>
+                <a href="https://youtube.com/watch?v=zFxJ8xNH6yM" class="project__link" target="_blank" rel="noopener">
+                    View demo <i class="fas fa-arrow-up-right-from-square"></i>
+                </a>
+            </article>
+
+            <article class="project reveal">
+                <div class="project__num">06</div>
+                <h3 class="project__title">Child Companion AI Robot</h3>
+                <p class="project__desc">
+                    Interactive AI robot companion combining computer vision, neural
+                    networks, and IoT integration for educational and entertainment use cases.
+                </p>
+                <div class="project__tech">
+                    <span class="tech">Neural Networks</span>
+                    <span class="tech">Flutter</span>
+                    <span class="tech">IoT</span>
+                    <span class="tech">Raspberry Pi</span>
+                    <span class="tech">Arduino</span>
+                </div>
+                <a href="https://youtube.com/watch?v=tHxzrk2d1Vw" class="project__link" target="_blank" rel="noopener">
+                    View demo <i class="fas fa-arrow-up-right-from-square"></i>
+                </a>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- ========== SKILLS ========== -->
+<section class="section" id="skills">
+    <div class="container">
+        <div class="reveal">
+            <div class="section__label">04 / Stack</div>
+            <h2 class="section__title">Tools, frameworks, and infrastructure.</h2>
+            <p class="section__lede">The systems I reach for to design and ship production AI.</p>
+        </div>
+
+        <div class="skills__grid">
+            <div class="skill-group reveal">
+                <div class="skill-group__head">
+                    <div class="skill-group__icon"><i class="fas fa-brain"></i></div>
+                    <div class="skill-group__title">AI &amp; LLM Systems</div>
+                </div>
+                <div class="skill-group__chips">
+                    <span class="chip">Agentic AI</span>
+                    <span class="chip">RAG Pipelines</span>
+                    <span class="chip">Multi-LLM Orchestration</span>
+                    <span class="chip">Prompt Engineering</span>
+                    <span class="chip">Fine-Tuning</span>
+                    <span class="chip">Embedding Pipelines</span>
+                    <span class="chip">Vector Search</span>
+                    <span class="chip">Multi-Tenant AI Architecture</span>
+                </div>
+            </div>
+
+            <div class="skill-group reveal">
+                <div class="skill-group__head">
+                    <div class="skill-group__icon"><i class="fas fa-cubes"></i></div>
+                    <div class="skill-group__title">Frameworks &amp; Libraries</div>
+                </div>
+                <div class="skill-group__chips">
+                    <span class="chip">LangChain</span>
+                    <span class="chip">LangGraph</span>
+                    <span class="chip">LlamaIndex</span>
+                    <span class="chip">FastAPI</span>
+                    <span class="chip">PyTorch</span>
+                    <span class="chip">TensorFlow</span>
+                    <span class="chip">Scikit-Learn</span>
+                    <span class="chip">OpenCV</span>
+                </div>
+            </div>
+
+            <div class="skill-group reveal">
+                <div class="skill-group__head">
+                    <div class="skill-group__icon"><i class="fas fa-code-branch"></i></div>
+                    <div class="skill-group__title">Backend &amp; APIs</div>
+                </div>
+                <div class="skill-group__chips">
+                    <span class="chip">Python</span>
+                    <span class="chip">REST APIs</span>
+                    <span class="chip">Real-Time Streaming</span>
+                    <span class="chip">OpenAI</span>
+                    <span class="chip">Anthropic</span>
+                    <span class="chip">Gemini</span>
+                    <span class="chip">Grok</span>
+                </div>
+            </div>
+
+            <div class="skill-group reveal">
+                <div class="skill-group__head">
+                    <div class="skill-group__icon"><i class="fas fa-database"></i></div>
+                    <div class="skill-group__title">Databases</div>
+                </div>
+                <div class="skill-group__chips">
+                    <span class="chip">PostgreSQL · pgvector</span>
+                    <span class="chip">Neo4j</span>
+                    <span class="chip">Redis</span>
+                    <span class="chip">MongoDB</span>
+                </div>
+            </div>
+
+            <div class="skill-group reveal">
+                <div class="skill-group__head">
+                    <div class="skill-group__icon"><i class="fas fa-cloud"></i></div>
+                    <div class="skill-group__title">Cloud &amp; DevOps</div>
+                </div>
+                <div class="skill-group__chips">
+                    <span class="chip">AWS ECS</span>
+                    <span class="chip">EC2</span>
+                    <span class="chip">RDS</span>
+                    <span class="chip">S3</span>
+                    <span class="chip">Cognito</span>
+                    <span class="chip">ElastiCache</span>
+                    <span class="chip">Docker</span>
+                    <span class="chip">GitHub Actions</span>
+                </div>
+            </div>
+
+            <div class="skill-group reveal">
+                <div class="skill-group__head">
+                    <div class="skill-group__icon"><i class="fas fa-terminal"></i></div>
+                    <div class="skill-group__title">Languages</div>
+                </div>
+                <div class="skill-group__chips">
+                    <span class="chip">Python</span>
+                    <span class="chip">C / C++</span>
+                    <span class="chip">SQL</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== AWARDS ========== -->
+<section class="section section--alt" id="awards">
+    <div class="container">
+        <div class="reveal">
+            <div class="section__label">05 / Recognition</div>
+            <h2 class="section__title">Awards &amp; recognition.</h2>
+            <p class="section__lede">Selected highlights from competitions, programs, and research.</p>
+        </div>
+
+        <div class="awards__grid">
+            <div class="award reveal">
+                <div class="award__year">2025</div>
+                <div>
+                    <div class="award__title">Champion — AI Hackathon (Healthcare)</div>
+                    <div class="award__org">Bangladesh Innovation Conclave</div>
+                    <div class="award__desc">Managed a team of 3, designed an AI application for the healthcare sector.</div>
+                    <a href="https://drive.google.com/file/d/1sVeLJ8Zpie8gxOW7krSu9ef_Pc80voIA/view?usp=sharing" class="award__cert" target="_blank" rel="noopener">
+                        Certificate <i class="fas fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="award reveal">
+                <div class="award__year">2025</div>
+                <div>
+                    <div class="award__title">Highest-Ranked Submission — BEAR Summit</div>
+                    <div class="award__org">AI Onsite Display · Code AI-048</div>
+                    <div class="award__desc">Qualified for on-site display among top submissions.</div>
+                    <a href="https://drive.google.com/file/d/1p-nL0_HFF0uoHyOBAjxm61-rAcMr52Rg/view?usp=sharing" class="award__cert" target="_blank" rel="noopener">
+                        Certificate <i class="fas fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="award reveal">
+                <div class="award__year">2025</div>
+                <div>
+                    <div class="award__title">1st Runner-Up — BEAR Summit (AI Demo)</div>
+                    <div class="award__org">Bangladesh National Semiconductor Symposium</div>
+                    <div class="award__desc">Submission code AI-047.</div>
+                    <a href="https://drive.google.com/file/d/1HKxTWSGQmkEBbRNWffMFzW2rEyZNQW-2/view?usp=sharing" class="award__cert" target="_blank" rel="noopener">
+                        Certificate <i class="fas fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="award reveal">
+                <div class="award__year">2024</div>
+                <div>
+                    <div class="award__title">Global Champion — University Rover Challenge</div>
+                    <div class="award__org">The Mars Society</div>
+                    <div class="award__desc">Competed against 20+ teams worldwide.</div>
+                </div>
+            </div>
+
+            <div class="award reveal">
+                <div class="award__year">2023</div>
+                <div>
+                    <div class="award__title">21st Century Employability Skilling Program</div>
+                    <div class="award__org">Wadhwani Foundation · Advanced</div>
+                    <div class="award__desc">Advanced professional development certification.</div>
+                    <a href="https://web.certificate.wfglobal.org/en/certificate?certificateId=65786bd98c30de8667beaa7e" class="award__cert" target="_blank" rel="noopener">
+                        Certificate <i class="fas fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="award reveal">
+                <div class="award__year">2023</div>
+                <div>
+                    <div class="award__title">EDGE-AI Certification — Top 5%</div>
+                    <div class="award__org">World Bank funded program</div>
+                    <div class="award__desc">Advanced AI specialization with top-tier project performance.</div>
+                    <a href="https://drive.google.com/file/d/1QCDdYeHA88LXqTvJmktVh7juUbHuvG8u/view?usp=sharing" class="award__cert" target="_blank" rel="noopener">
+                        Certificate <i class="fas fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="award reveal">
+                <div class="award__year">2023</div>
+                <div>
+                    <div class="award__title">5th Place — Technovent Hackathon</div>
+                    <div class="award__org">SUST · 48-hour AI/ML innovation challenge</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== CONTACT ========== -->
+<section class="section" id="contact">
+    <div class="container">
+        <div class="contact reveal">
+            <div class="section__label" style="justify-content: center;">06 / Contact</div>
+            <h2 class="section__title">Let's build something together.</h2>
+            <p class="contact__lede">
+                Open to AI/ML engineering roles, MLOps work, and collaborative builds.
+                The fastest way to reach me:
+            </p>
+
+            <a href="mailto:fhmshahryer@gmail.com" class="contact__cta">
+                fhmshahryer@gmail.com <i class="fas fa-arrow-right"></i>
+            </a>
+
+            <div class="contact__methods">
+                <a href="tel:+8801755235354" class="contact__method">
+                    <i class="fas fa-phone"></i> +880-1755-235354
+                </a>
+                <span class="contact__method">
+                    <i class="fas fa-map-marker-alt"></i> Dhaka, Bangladesh
+                </span>
+                <a href="https://github.com/fahimshahryer" target="_blank" rel="noopener" class="contact__method">
+                    <i class="fab fa-github"></i> github.com/fahimshahryer
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer__grid">
+            <div class="footer__brand">
+                <strong>© 2026 Fahim Shahryer</strong> · Built with care in Dhaka
+            </div>
+            <div class="footer__socials">
+                <a href="https://github.com/fahimshahryer" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/fahim-shahryer/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="mailto:fhmshahryer@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<a href="#home" class="scroll-up" id="scroll-up" aria-label="Scroll to top">
+    <i class="fas fa-arrow-up"></i>
+</a>
+
+<script src="js/main.js"></script>
 </body>
 </html>
