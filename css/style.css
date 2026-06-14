@@ -563,9 +563,9 @@ body.light .header { background: rgba(250, 250, 249, 0.75); }
    ========================================================================== */
 .about__grid {
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 5rem;
-  align-items: start;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 4.5rem;
+  align-items: center;
 }
 .about__bio p {
   color: var(--text-muted);
