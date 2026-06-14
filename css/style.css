@@ -919,6 +919,189 @@ body.light .header { background: rgba(250, 250, 249, 0.75); }
 .project__cta-inner .project__link { align-self: center; font-family: var(--font-mono); font-size: 0.8125rem; }
 
 /* ==========================================================================
+   PROJECT MEDIA (video poster + play) & GALLERY
+   ========================================================================== */
+.project__media {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin-bottom: 1.25rem;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: linear-gradient(135deg, var(--bg-elev-2), var(--accent-soft));
+  cursor: pointer;
+}
+.project__thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--t-slow);
+}
+.project__media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.5));
+  opacity: 0.75;
+  transition: opacity var(--t-med);
+}
+.project__media:hover .project__thumb { transform: scale(1.05); }
+.project__media:hover::after { opacity: 0.55; }
+.project__play {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--on-accent);
+  font-size: 1.05rem;
+  z-index: 2;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.4);
+  transition: transform var(--t-fast), background var(--t-fast);
+}
+.project__play i { margin-left: 3px; }
+.project__media:hover .project__play { transform: scale(1.12); background: var(--accent-hover); }
+
+/* Featured gallery thumbnail strip */
+.project__gallery { margin-bottom: 1.25rem; }
+.project__gallery-label {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-dim);
+  margin-bottom: 0.6rem;
+}
+.project__gallery-thumbs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+}
+.gthumb {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--bg-elev-2);
+  cursor: pointer;
+}
+.gthumb img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--t-med); }
+.gthumb:hover img { transform: scale(1.07); }
+.gthumb:hover { border-color: var(--accent); }
+.gthumb__more {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   LIGHTBOX
+   ========================================================================== */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(1rem, 4vw, 3rem);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--t-med), visibility var(--t-med);
+}
+.lightbox.open { opacity: 1; visibility: visible; }
+.lightbox__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.lightbox__stage {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  width: 100%;
+  max-width: 1080px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0.97);
+  transition: transform var(--t-med);
+}
+.lightbox.open .lightbox__stage { transform: scale(1); }
+.lightbox__stage img {
+  max-width: 100%;
+  max-height: 82vh;
+  border-radius: var(--radius);
+  box-shadow: var(--sh-lg);
+  display: block;
+}
+.lb-video {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-height: 82vh;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--sh-lg);
+  background: #000;
+}
+.lb-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.lightbox__btn {
+  position: absolute;
+  z-index: 2;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  font-size: 1rem;
+  backdrop-filter: blur(4px);
+  transition: background var(--t-fast), transform var(--t-fast);
+}
+.lightbox__btn:hover { background: rgba(255, 255, 255, 0.2); }
+.lightbox__close { top: clamp(1rem, 3vw, 2rem); right: clamp(1rem, 3vw, 2rem); }
+.lightbox__prev { left: clamp(0.5rem, 2vw, 1.75rem); top: 50%; transform: translateY(-50%); }
+.lightbox__next { right: clamp(0.5rem, 2vw, 1.75rem); top: 50%; transform: translateY(-50%); }
+.lightbox__prev:hover { transform: translateY(-50%) scale(1.08); }
+.lightbox__next:hover { transform: translateY(-50%) scale(1.08); }
+.lightbox__counter {
+  position: absolute;
+  bottom: clamp(1rem, 3vw, 2rem);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.85);
+  background: rgba(0, 0, 0, 0.45);
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+}
+.lightbox[data-mode="video"] .lightbox__prev,
+.lightbox[data-mode="video"] .lightbox__next,
+.lightbox[data-mode="video"] .lightbox__counter { display: none; }
+body.no-scroll { overflow: hidden; }
+
+/* ==========================================================================
    SKILLS
    ========================================================================== */
 .skills__grid {

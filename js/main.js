@@ -165,6 +165,114 @@
     localStorage.setItem(STORAGE_KEY, next);
   });
 
+  /* --------- Media: galleries + lightbox --------- */
+  // Add screenshot filenames here as they are added to assets/business-agent/.
+  // Order = display order. Paths are relative to the site root.
+  const GALLERIES = {
+    'business-agent': {
+      title: 'Bizz — Business Intelligence Agent',
+      images: [
+        // 'assets/business-agent/01.png',
+        // 'assets/business-agent/02.png',
+      ],
+    },
+  };
+
+  // Build thumbnail strips inside cards that declare a gallery
+  document.querySelectorAll('[data-gallery]').forEach(container => {
+    const key = container.dataset.gallery;
+    const g = GALLERIES[key];
+    if (!g || !g.images.length) { container.style.display = 'none'; return; }
+    const imgs = g.images;
+    const MAX = 4;
+    const shown = imgs.slice(0, MAX);
+    const thumbs = shown.map((src, i) => {
+      const more = (i === MAX - 1 && imgs.length > MAX)
+        ? `<span class="gthumb__more">+${imgs.length - MAX + 1}</span>` : '';
+      return `<button class="gthumb" type="button" data-gallery-open="${key}" data-index="${i}" aria-label="Open screenshot ${i + 1} of ${imgs.length}"><img src="${src}" alt="${g.title} screenshot ${i + 1}" loading="lazy">${more}</button>`;
+    }).join('');
+    container.innerHTML =
+      `<div class="project__gallery-label">Screenshots · ${imgs.length}</div>` +
+      `<div class="project__gallery-thumbs">${thumbs}</div>`;
+  });
+
+  // Lightbox
+  const lb = document.getElementById('lightbox');
+  if (lb) {
+    const stage = document.getElementById('lightbox-stage');
+    const counter = document.getElementById('lightbox-counter');
+    let mode = null, list = [], idx = 0, lastFocus = null;
+
+    const openLB = m => {
+      mode = m;
+      lb.dataset.mode = m;
+      lastFocus = document.activeElement;
+      lb.classList.add('open');
+      lb.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('no-scroll');
+      lb.querySelector('.lightbox__close').focus();
+    };
+    const closeLB = () => {
+      lb.classList.remove('open');
+      lb.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('no-scroll');
+      stage.innerHTML = '';        // unmounts iframe → stops playback
+      mode = null;
+      if (lastFocus && lastFocus.focus) lastFocus.focus();
+    };
+
+    const renderImage = () => {
+      stage.innerHTML = `<img src="${list[idx]}" alt="Screenshot ${idx + 1} of ${list.length}">`;
+      counter.textContent = `${idx + 1} / ${list.length}`;
+    };
+    const openGallery = (key, index) => {
+      const g = GALLERIES[key];
+      if (!g || !g.images.length) return;
+      list = g.images;
+      idx = Math.max(0, Math.min(index || 0, list.length - 1));
+      renderImage();
+      openLB('gallery');
+    };
+    const openEmbed = url => {
+      stage.innerHTML =
+        `<div class="lb-video"><iframe src="${url}" title="Demo video" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe></div>`;
+      openLB('video');
+    };
+    const openYouTube = id => openEmbed(`https://www.youtube.com/embed/${id}?autoplay=1&rel=0&modestbranding=1&playsinline=1`);
+    const openDrive = id => openEmbed(`https://drive.google.com/file/d/${id}/preview`);
+
+    const next = () => { if (mode === 'gallery') { idx = (idx + 1) % list.length; renderImage(); } };
+    const prev = () => { if (mode === 'gallery') { idx = (idx - 1 + list.length) % list.length; renderImage(); } };
+
+    lb.querySelectorAll('[data-close]').forEach(el => el.addEventListener('click', closeLB));
+    lb.querySelector('.lightbox__next').addEventListener('click', next);
+    lb.querySelector('.lightbox__prev').addEventListener('click', prev);
+    document.addEventListener('keydown', e => {
+      if (!lb.classList.contains('open')) return;
+      if (e.key === 'Escape') closeLB();
+      else if (e.key === 'ArrowRight') next();
+      else if (e.key === 'ArrowLeft') prev();
+    });
+
+    // Delegated triggers
+    document.addEventListener('click', e => {
+      const yt = e.target.closest('[data-youtube]');
+      if (yt) { e.preventDefault(); openYouTube(yt.dataset.youtube); return; }
+      const dr = e.target.closest('[data-drive]');
+      if (dr) { e.preventDefault(); openDrive(dr.dataset.drive); return; }
+      const go = e.target.closest('[data-gallery-open]');
+      if (go) { e.preventDefault(); openGallery(go.dataset.gallery, parseInt(go.dataset.index || '0', 10)); return; }
+    });
+  }
+
+  // Thumbnail fallback (maxres → hq → hide so the gradient shows)
+  document.querySelectorAll('.project__thumb').forEach(img => {
+    img.addEventListener('error', () => {
+      if (img.dataset.fallback && img.src !== img.dataset.fallback) img.src = img.dataset.fallback;
+      else img.style.display = 'none';
+    });
+  });
+
   /* --------- Console signature --------- */
   console.log(
     '%c● Fahim Shahryer',
