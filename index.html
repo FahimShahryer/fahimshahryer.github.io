@@ -302,29 +302,45 @@
         </div>
 
         <div class="projects__grid">
-            <article class="project spotlight reveal">
-                <div class="project__top">
-                    <div class="project__num">01</div>
-                    <span class="project__tag">Agentic · BI</span>
+            <article class="project project--featured spotlight reveal">
+                <div class="project__lead">
+                    <div class="project__top">
+                        <div class="project__num">01 · Featured</div>
+                        <span class="project__tag">Agentic · Multi-tenant</span>
+                    </div>
+                    <h3 class="project__title">Bizz — Business Intelligence Agent</h3>
+                    <p class="project__desc">
+                        Multi-tenant agentic BI platform where teams chat in plain English
+                        to query their databases (text-to-SQL), search documents (agentic
+                        RAG), and generate charts, PDF reports, and PowerPoint decks —
+                        strictly data-driven, so figures are never hallucinated. An OAuth
+                        connector framework (Slack first) lets the agent act inside users'
+                        own tools: reading channels, posting updates, and delivering
+                        reports. Built as a LangGraph agent orchestrating a fleet of MCP
+                        microservices, with per-user permissions and a Fernet-encrypted
+                        credential vault.
+                    </p>
+                    <a href="https://drive.google.com/drive/folders/1IXaABruefc1v1OxgWhZlGfuNSgKPQFB2?usp=sharing" class="project__link" target="_blank" rel="noopener">
+                        View demo <i class="fas fa-arrow-up-right-from-square"></i>
+                    </a>
                 </div>
-                <h3 class="project__title">Business Intelligence Agent</h3>
-                <p class="project__desc">
-                    Enterprise AI agent with full access to company databases and documents —
-                    investigates business questions, forecasts sales trends, generates
-                    data-driven strategic insights for leadership, and automates routine
-                    business operations.
-                </p>
-                <div class="project__tech">
-                    <span class="tech">LangChain</span>
-                    <span class="tech">LangGraph</span>
-                    <span class="tech">FastAPI</span>
-                    <span class="tech">FastMCP</span>
-                    <span class="tech">pgvector</span>
-                    <span class="tech">Docker</span>
-                </div>
-                <a href="https://drive.google.com/drive/folders/1IXaABruefc1v1OxgWhZlGfuNSgKPQFB2?usp=sharing" class="project__link" target="_blank" rel="noopener">
-                    View demo <i class="fas fa-arrow-up-right-from-square"></i>
-                </a>
+                <aside class="project__aside">
+                    <div class="project__aside-label">Stack</div>
+                    <div class="project__tech">
+                        <span class="tech">LangChain · LangGraph</span>
+                        <span class="tech">MCP microservices</span>
+                        <span class="tech">OpenAI · Anthropic</span>
+                        <span class="tech">FastAPI</span>
+                        <span class="tech">PostgreSQL · pgvector</span>
+                        <span class="tech">BM25 + Vector (RRF)</span>
+                        <span class="tech">MinIO</span>
+                        <span class="tech">Next.js · TypeScript</span>
+                        <span class="tech">SSE Streaming</span>
+                        <span class="tech">OAuth 2.0 · Slack</span>
+                        <span class="tech">Docker Compose</span>
+                        <span class="tech">Caddy · VPS</span>
+                    </div>
+                </aside>
             </article>
 
             <article class="project spotlight reveal">
