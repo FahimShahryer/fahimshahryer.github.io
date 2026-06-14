@@ -3,9 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Fahim Shahryer — AI/ML Engineer (MLOps). Production-grade LLM systems, agentic AI, and RAG pipelines.">
+    <meta name="description" content="Fahim Shahryer — AI/ML Engineer (MLOps). 2.5+ years building production-grade LLM systems, agentic AI architectures, and RAG pipelines serving 1000+ users.">
+    <meta name="author" content="Fahim Shahryer">
     <meta name="theme-color" content="#0a0a0b">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Fahim Shahryer — AI/ML Engineer (MLOps)">
+    <meta property="og:description" content="Production-grade LLM systems, agentic AI architectures, and RAG pipelines. Multi-tenant SaaS, multi-LLM orchestration, end-to-end ML lifecycle on AWS.">
+    <meta property="og:url" content="https://fahimshahryer.github.io">
+
     <title>Fahim Shahryer — AI/ML Engineer (MLOps)</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -25,14 +36,14 @@
             <li><a href="#about" class="nav__link">About</a></li>
             <li><a href="#experience" class="nav__link">Experience</a></li>
             <li><a href="#projects" class="nav__link">Projects</a></li>
-            <li><a href="#skills" class="nav__link">Skills</a></li>
+            <li><a href="#skills" class="nav__link">Stack</a></li>
             <li><a href="#awards" class="nav__link">Awards</a></li>
             <li><a href="#contact" class="nav__link">Contact</a></li>
             <button class="nav__close" id="nav-close" aria-label="Close menu"><i class="fas fa-times"></i></button>
         </ul>
 
         <div class="nav__actions">
-            <button class="theme-btn" id="theme-btn" aria-label="Toggle theme">
+            <button class="theme-btn" id="theme-btn" aria-label="Toggle color theme">
                 <i class="fas fa-sun" id="theme-icon"></i>
             </button>
             <button class="nav__toggle" id="nav-toggle" aria-label="Open menu"><i class="fas fa-bars"></i></button>
@@ -44,40 +55,46 @@
 
 <!-- ========== HERO ========== -->
 <section class="hero" id="home">
+    <div class="hero__aurora" aria-hidden="true">
+        <span class="hero__blob hero__blob--1"></span>
+        <span class="hero__blob hero__blob--2"></span>
+    </div>
+
     <div class="container">
         <div class="hero__grid">
             <div class="hero__intro">
-                <span class="status-pill">
+                <span class="status-pill anim" style="--d:0">
                     <span class="status-pill__dot"></span>
                     Available for new opportunities
                 </span>
 
-                <h1 class="hero__title">
+                <h1 class="hero__title anim" style="--d:1">
                     Fahim <span class="hero__title-accent">Shahryer</span>
                 </h1>
 
-                <p class="hero__role">
+                <p class="hero__role anim" style="--d:2">
                     <span class="hero__role-tag">~/</span>
                     AI/ML Engineer · MLOps · Building production LLM systems
                 </p>
 
-                <p class="hero__desc">
-                    I design and ship production-grade LLM systems, agentic architectures,
-                    and RAG pipelines. 2+ years building multi-tenant SaaS AI platforms
-                    with FastAPI, LangGraph, and AWS — used by 100+ researchers and
-                    enterprise teams.
+                <p class="hero__desc anim" style="--d:3">
+                    I design and ship production-grade LLM systems, agentic AI
+                    architectures, and RAG pipelines — serving <strong>1000+ users</strong>.
+                    2.5+ years building multi-tenant SaaS and multi-LLM orchestration
+                    across the full ML lifecycle on AWS with FastAPI, LangGraph, and
+                    vector databases.
                 </p>
 
-                <div class="hero__actions">
-                    <a href="#experience" class="btn btn--primary">
-                        View Experience <i class="fas fa-arrow-right"></i>
+                <div class="hero__actions anim" style="--d:4">
+                    <a href="#projects" class="btn btn--primary">
+                        View Work <i class="fas fa-arrow-right"></i>
                     </a>
-                    <a href="assets/fahim_shahryer_2026.pdf" class="btn btn--ghost" download>
+                    <a href="assets/fahim_shahryer.pdf" class="btn btn--ghost" download>
                         <i class="fas fa-download"></i> Download CV
                     </a>
                 </div>
 
-                <div class="hero__socials">
+                <div class="hero__socials anim" style="--d:5">
                     <a href="https://github.com/fahimshahryer" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
                     <a href="https://www.linkedin.com/in/fahim-shahryer/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     <a href="mailto:fhmshahryer@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
@@ -85,15 +102,15 @@
                 </div>
             </div>
 
-            <div class="hero__visual">
+            <div class="hero__visual anim" style="--d:3">
                 <div class="hero__img-frame">
-                    <img src="assets/profile.jpg" alt="Fahim Shahryer" loading="eager">
+                    <img src="assets/profile.jpg" alt="Portrait of Fahim Shahryer" loading="eager">
                 </div>
                 <div class="hero__badge">
                     <i class="fas fa-bolt"></i>
                     <div>
                         <strong>Currently shipping</strong>
-                        <span>Actionboard AI · Cloudscockpit</span>
+                        <span>Actionboard · Cloudscockpit</span>
                     </div>
                 </div>
             </div>
@@ -102,24 +119,38 @@
         <!-- Stats strip -->
         <div class="hero__stats reveal">
             <div class="hero__stat">
-                <div class="hero__stat-value"><span class="accent">2+</span> yrs</div>
-                <div class="hero__stat-label">Production AI engineering</div>
+                <div class="hero__stat-value"><span class="accent" data-count="2.5" data-suffix="+">2.5+</span></div>
+                <div class="hero__stat-label">Years in production AI</div>
             </div>
             <div class="hero__stat">
-                <div class="hero__stat-value"><span class="accent">100+</span></div>
-                <div class="hero__stat-label">Researchers using AKI</div>
+                <div class="hero__stat-value"><span class="accent" data-count="1000" data-suffix="+">1000+</span></div>
+                <div class="hero__stat-label">Users served</div>
             </div>
             <div class="hero__stat">
-                <div class="hero__stat-value"><span class="accent">4</span></div>
-                <div class="hero__stat-label">LLM providers integrated</div>
+                <div class="hero__stat-value"><span class="accent" data-count="4">4</span></div>
+                <div class="hero__stat-label">LLM providers orchestrated</div>
             </div>
             <div class="hero__stat">
-                <div class="hero__stat-value"><span class="accent">7+</span></div>
-                <div class="hero__stat-label">Awards &amp; recognitions</div>
+                <div class="hero__stat-value"><span class="accent" data-count="20" data-suffix="+">20+</span></div>
+                <div class="hero__stat-label">MCP tools integrated</div>
             </div>
         </div>
     </div>
 </section>
+
+<!-- ========== TECH MARQUEE ========== -->
+<div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+        <span>LangGraph</span><span>·</span><span>FastAPI</span><span>·</span><span>RAG</span><span>·</span>
+        <span>pgvector</span><span>·</span><span>Agentic AI</span><span>·</span><span>MCP</span><span>·</span>
+        <span>AWS</span><span>·</span><span>LangChain</span><span>·</span><span>Neo4j</span><span>·</span>
+        <span>vLLM</span><span>·</span><span>PyTorch</span><span>·</span><span>Multi-LLM</span><span>·</span>
+        <span>LangGraph</span><span>·</span><span>FastAPI</span><span>·</span><span>RAG</span><span>·</span>
+        <span>pgvector</span><span>·</span><span>Agentic AI</span><span>·</span><span>MCP</span><span>·</span>
+        <span>AWS</span><span>·</span><span>LangChain</span><span>·</span><span>Neo4j</span><span>·</span>
+        <span>vLLM</span><span>·</span><span>PyTorch</span><span>·</span><span>Multi-LLM</span><span>·</span>
+    </div>
+</div>
 
 <!-- ========== ABOUT ========== -->
 <section class="section section--alt" id="about">
@@ -136,19 +167,22 @@
         <div class="about__grid">
             <div class="about__bio reveal">
                 <p>
-                    I'm <strong>Fahim Shahryer</strong>, an AI/ML Engineer (MLOps) with 2+ years
-                    of experience designing and deploying production-grade LLM systems,
-                    agentic architectures, and Retrieval-Augmented Generation (RAG) pipelines.
+                    I'm <strong>Fahim Shahryer</strong>, an MLOps / AI Engineer with
+                    2.5+ years designing and deploying production-grade LLM systems,
+                    agentic AI architectures, and Retrieval-Augmented Generation (RAG)
+                    pipelines.
                 </p>
                 <p>
-                    I've built multi-LLM orchestration platforms, multi-tenant SaaS AI
-                    products, and scalable backends with <strong>FastAPI, LangGraph, and AWS</strong>.
-                    My work has shipped to <strong>100+ researchers</strong> and enterprise
-                    teams across healthcare, fintech, and document automation.
+                    I build <strong>multi-tenant SaaS</strong> platforms, multi-LLM
+                    orchestration layers, and scalable backends with
+                    <strong>FastAPI, LangGraph, and AWS</strong>. My work ships to
+                    <strong>1000+ users</strong> across enterprise teams, research, and
+                    document automation — with isolated knowledge bases and per-tenant
+                    analytics.
                 </p>
                 <p>
                     Beyond the build, I think hard about <strong>system design</strong>,
-                    cost-aware inference, and end-to-end ML lifecycle — because the
+                    cost-aware routing, and the end-to-end ML lifecycle — because the
                     interesting problem is rarely the model.
                 </p>
             </div>
@@ -158,28 +192,28 @@
                     <div class="capability__icon"><i class="fas fa-network-wired"></i></div>
                     <div>
                         <div class="capability__title">LLM Systems &amp; RAG</div>
-                        <div class="capability__desc">Production RAG pipelines, embedding workflows, semantic retrieval, multi-LLM orchestration.</div>
+                        <div class="capability__desc">Production RAG with hybrid retrieval, embedding workflows, semantic search, multi-LLM orchestration.</div>
                     </div>
                 </div>
                 <div class="capability">
                     <div class="capability__icon"><i class="fas fa-robot"></i></div>
                     <div>
                         <div class="capability__title">Agentic Architecture</div>
-                        <div class="capability__desc">Multi-step reasoning frameworks, tool use, MCP servers, agent orchestration.</div>
+                        <div class="capability__desc">Multi-step reasoning frameworks, tool use, custom MCP ecosystems, agent orchestration.</div>
                     </div>
                 </div>
                 <div class="capability">
                     <div class="capability__icon"><i class="fas fa-server"></i></div>
                     <div>
                         <div class="capability__title">Multi-tenant SaaS Backends</div>
-                        <div class="capability__desc">FastAPI, LangGraph, real-time streaming, role-based access, tenant isolation.</div>
+                        <div class="capability__desc">FastAPI, LangGraph, SSE streaming, tenant isolation, role-based access, usage analytics.</div>
                     </div>
                 </div>
                 <div class="capability">
                     <div class="capability__icon"><i class="fab fa-aws"></i></div>
                     <div>
                         <div class="capability__title">Cloud &amp; MLOps</div>
-                        <div class="capability__desc">AWS ECS/EC2/RDS/S3, Cognito, ElastiCache, Docker, GitHub Actions CI/CD.</div>
+                        <div class="capability__desc">AWS ECS/EC2/RDS/S3, Cognito, ElastiCache, Docker, CI/CD, self-hosted LLMs (vLLM), LangSmith.</div>
                     </div>
                 </div>
             </div>
@@ -193,7 +227,7 @@
         <div class="reveal">
             <div class="section__label">02 / Experience</div>
             <h2 class="section__title">Building things people use.</h2>
-            <p class="section__lede">A timeline of roles, products, and impact.</p>
+            <p class="section__lede">A timeline of roles, products, and measurable impact.</p>
         </div>
 
         <div class="timeline">
@@ -202,13 +236,14 @@
                 <div class="exp__head">
                     <h3 class="exp__role">MLOps Engineer</h3>
                     <span class="exp__company">Cloudscockpit</span>
-                    <span class="exp__date">Oct 2025 — Present</span>
+                    <span class="exp__date">Sept 2025 — Present</span>
                 </div>
                 <ul class="exp__list">
-                    <li>Architected and deployed <strong>Actionboard AI</strong>, a multi-tenant AI-powered project management SaaS built around conversational agents — structured task planning, document analysis, and role-based guidance via natural chat.</li>
-                    <li>Designed a production-grade <strong>RAG pipeline</strong> with global and tenant-level knowledge bases — document ingestion (PDF, DOCX) via AWS S3, chunking, embedding, and semantic retrieval using PostgreSQL pgvector.</li>
-                    <li>Integrated multiple LLM providers (<strong>OpenAI, Anthropic, Gemini, Grok</strong>) and built a custom multi-step reasoning framework (RAOARA) for structured task decomposition and agent orchestration.</li>
-                    <li>Built scalable multi-tenant infra with <strong>FastAPI, LangGraph, Neo4j, Redis</strong>, AWS (ECS, EC2, RDS, Cognito, ElastiCache) — real-time streaming, MCP tool servers, and tenant-level token usage analytics.</li>
+                    <li>Architected the agentic backend of <strong>Actionboard</strong>, a multi-tenant project management platform where AI agents autonomously generate goals, action lists, and project plans from natural conversation — serving <strong>5+ enterprise tenants</strong> with isolated knowledge bases.</li>
+                    <li>Built a <strong>RAG pipeline</strong> with hybrid global/tenant retrieval — automated PDF/DOCX ingestion via AWS S3, chunking, embedding, and semantic search on PostgreSQL pgvector.</li>
+                    <li>Orchestrated <strong>4 LLM providers</strong> with a custom multi-step reasoning framework (RAOARA) for cost-aware routing and structured agent decomposition.</li>
+                    <li>Designed an extensible <strong>MCP ecosystem</strong> — integrated 7 internal MCP servers (20+ tools) and enabled tenants to connect their own servers, expanding agent tool capabilities <strong>3× at runtime</strong>.</li>
+                    <li>Deployed scalable infrastructure with <strong>FastAPI, LangGraph, Neo4j, Redis</strong>, and AWS (ECS, RDS, Cognito, ElastiCache) — real-time SSE streaming and per-tenant token usage analytics.</li>
                 </ul>
             </div>
 
@@ -217,12 +252,12 @@
                 <div class="exp__head">
                     <h3 class="exp__role">AI/ML Engineer</h3>
                     <span class="exp__company">Periscope Labs, Dhaka</span>
-                    <span class="exp__date">Apr 2025 — Oct 2025</span>
+                    <span class="exp__date">Jan 2025 — Sept 2025</span>
                 </div>
                 <ul class="exp__list">
-                    <li>Led an <strong>Agentic AI</strong> framework for document validation using RAG and a multi-LLM approach (OpenAI, Mistral) to validate invoices and policy documents — <strong>reduced manual review by 70%</strong>.</li>
-                    <li>Engineered an admin dashboard for policy document management with an annotation pipeline that marks policy violations directly in source documents.</li>
-                    <li>Designed a loan default prediction pipeline using time series analysis and feature engineering — early-warning system identifying at-risk customers 30 days in advance with <strong>75% accuracy</strong>.</li>
+                    <li>Built an <strong>Agentic AI</strong> framework for document validation using RAG and multi-LLM routing (OpenAI, Mistral) to auto-validate invoices and policy documents — <strong>reduced manual review effort by 70%</strong>.</li>
+                    <li>Engineered an admin dashboard with an annotation pipeline that programmatically marks policy violations directly in source documents, improving auditor turnaround time.</li>
+                    <li>Designed a loan default prediction pipeline using time-series feature engineering — an early-warning system flagging at-risk customers <strong>30 days in advance with 75% accuracy</strong>.</li>
                 </ul>
             </div>
 
@@ -231,25 +266,12 @@
                 <div class="exp__head">
                     <h3 class="exp__role">Research Assistant</h3>
                     <span class="exp__company">Quantum Robotics &amp; Automation Research Group, MIST</span>
-                    <span class="exp__date">Jan 2024 — May 2025</span>
+                    <span class="exp__date">Jan 2024 — Dec 2024</span>
                 </div>
                 <ul class="exp__list">
-                    <li>Engineered an end-to-end <strong>AutoML</strong> platform (AKI) used by <strong>100+ researchers</strong> — data upload, preprocessing, visualization, model training, and deployment with no coding required.</li>
-                    <li>Built a computer vision assistive interface achieving <strong>92% accuracy</strong> in eye-movement tracking — enabling voice- and hand-free communication for paralyzed and post-surgery patients.</li>
-                    <li>Directed 3 AI research projects contributing to publications and mentored 7+ junior researchers.</li>
-                </ul>
-            </div>
-
-            <div class="exp reveal">
-                <div class="exp__node"></div>
-                <div class="exp__head">
-                    <h3 class="exp__role">EDGE-AI Trainee</h3>
-                    <span class="exp__company">ITIL · World Bank Funded Program</span>
-                    <span class="exp__date">Aug 2023 — Nov 2023</span>
-                </div>
-                <ul class="exp__list">
-                    <li>Completed a 160-hour AI specialization program in partnership with Bangladesh Computer Council, focused on enterprise-level AI deployment.</li>
-                    <li>Top <strong>5% performance</strong> in program assessments and practical projects.</li>
+                    <li>Developed an end-to-end <strong>AutoML</strong> platform (AKI) used by <strong>100+ researchers</strong> — data upload, preprocessing, visualization, model training, and deployment via a no-code interface.</li>
+                    <li>Built an AI-based assistive interface achieving <strong>92% accuracy</strong> in eye-movement tracking — enabling voice- and hand-free communication for paralyzed and post-surgery patients.</li>
+                    <li>Led 3 AI research projects contributing to publications and mentored 7+ teams in ML/DL and computer vision.</li>
                 </ul>
             </div>
         </div>
@@ -261,7 +283,6 @@
                 <div class="edu__degree">BSc in Computer Science &amp; Engineering</div>
                 <div class="edu__school">
                     Military Institute of Science and Technology (MIST), Dhaka
-                    <span class="gpa">GPA 3.18 / 4.00</span>
                 </div>
             </div>
             <div class="edu__date">Feb 2019 — Dec 2023</div>
@@ -282,78 +303,68 @@
         </div>
 
         <div class="projects__grid">
-            <article class="project reveal">
-                <div class="project__num">01</div>
-                <h3 class="project__title">Automated Document Processor</h3>
+            <article class="project spotlight reveal">
+                <div class="project__top">
+                    <div class="project__num">01</div>
+                    <span class="project__tag">Agentic · BI</span>
+                </div>
+                <h3 class="project__title">Business Intelligence Agent</h3>
                 <p class="project__desc">
-                    Agentic AI system for automated document validation using RAG architecture
-                    and a multi-LLM approach. Validates invoices and policy documents against
-                    business rules.
+                    Enterprise AI agent with full access to company databases and documents —
+                    investigates business questions, forecasts sales trends, generates
+                    data-driven strategic insights for leadership, and automates routine
+                    business operations.
                 </p>
                 <div class="project__tech">
-                    <span class="tech">Python</span>
                     <span class="tech">LangChain</span>
-                    <span class="tech">RAG</span>
-                    <span class="tech">Mistral</span>
-                    <span class="tech">Weaviate</span>
+                    <span class="tech">LangGraph</span>
+                    <span class="tech">FastAPI</span>
+                    <span class="tech">FastMCP</span>
+                    <span class="tech">pgvector</span>
                     <span class="tech">Docker</span>
                 </div>
-                <a href="https://drive.google.com/drive/folders/1fPit_76dNBvrrv7-ERA-XgEzFv8oVC-n" class="project__link" target="_blank" rel="noopener">
+                <a href="https://drive.google.com/drive/folders/1IXaABruefc1v1OxgWhZlGfuNSgKPQFB2?usp=sharing" class="project__link" target="_blank" rel="noopener">
                     View demo <i class="fas fa-arrow-up-right-from-square"></i>
                 </a>
             </article>
 
-            <article class="project reveal">
-                <div class="project__num">02</div>
-                <h3 class="project__title">NexNews — AI Fact Checker</h3>
+            <article class="project spotlight reveal">
+                <div class="project__top">
+                    <div class="project__num">02</div>
+                    <span class="project__tag">EdTech · Agent</span>
+                </div>
+                <h3 class="project__title">Interactive AI Tutor</h3>
                 <p class="project__desc">
-                    AI-powered fact-checking system that validates news articles using
-                    multiple sources and LLM agents for cross-verification and credibility
-                    scoring.
+                    AI-powered learning platform where students learn through interactive
+                    simulations with an integrated AI agent — supports real-time
+                    visualization, simulation control, and conversational Q&amp;A.
                 </p>
                 <div class="project__tech">
-                    <span class="tech">Python</span>
-                    <span class="tech">LLMs</span>
-                    <span class="tech">AI Agents</span>
-                    <span class="tech">News API</span>
-                    <span class="tech">Web Scraping</span>
+                    <span class="tech">LangChain</span>
+                    <span class="tech">FastAPI</span>
+                    <span class="tech">Agentic AI</span>
+                    <span class="tech">Real-Time Streaming</span>
                 </div>
-                <a href="https://drive.google.com/drive/folders/1b55EJlqMJk_JE9qoDyiPvlutZOVvmRPa?usp=sharing" class="project__link" target="_blank" rel="noopener">
+                <a href="https://drive.google.com/file/d/17k9TOuqUL8xznRJLdAZch9qriW-joXpH/view?usp=sharing" class="project__link" target="_blank" rel="noopener">
                     View demo <i class="fas fa-arrow-up-right-from-square"></i>
                 </a>
             </article>
 
-            <article class="project reveal">
-                <div class="project__num">03</div>
-                <h3 class="project__title">AKI — Artificial Kinetic Intelligence</h3>
+            <article class="project spotlight reveal">
+                <div class="project__top">
+                    <div class="project__num">03</div>
+                    <span class="project__tag">Computer Vision</span>
+                </div>
+                <h3 class="project__title">Eye Motion Tracking Assistive System</h3>
                 <p class="project__desc">
-                    End-to-end AutoML platform assisting 100+ researchers with data
-                    preprocessing, visualization, model training, and deployment — without
-                    writing code.
+                    Computer-vision system enabling paralyzed users to operate a computer
+                    hands-free with <strong>92% gaze-tracking accuracy</strong> — no voice
+                    or hand controls required.
                 </p>
                 <div class="project__tech">
                     <span class="tech">Scikit-Learn</span>
-                    <span class="tech">Python</span>
-                    <span class="tech">Plotly</span>
-                    <span class="tech">MongoDB</span>
-                </div>
-                <a href="https://drive.google.com/drive/folders/1_AnxoNO1xu7xcAOgB9-o-WnhXnMPmul6?usp=sharing" class="project__link" target="_blank" rel="noopener">
-                    View demo <i class="fas fa-arrow-up-right-from-square"></i>
-                </a>
-            </article>
-
-            <article class="project reveal">
-                <div class="project__num">04</div>
-                <h3 class="project__title">Eye Motion Tracking System</h3>
-                <p class="project__desc">
-                    AI-based assistive interface achieving 92% accuracy in eye movement
-                    tracking — enabling paralyzed patients to communicate without voice or
-                    hand controls.
-                </p>
-                <div class="project__tech">
                     <span class="tech">TensorFlow</span>
                     <span class="tech">Computer Vision</span>
-                    <span class="tech">Scikit-Learn</span>
                     <span class="tech">Python</span>
                 </div>
                 <a href="https://youtube.com/watch?v=x9VaKQbCiv4" class="project__link" target="_blank" rel="noopener">
@@ -361,12 +372,16 @@
                 </a>
             </article>
 
-            <article class="project reveal">
-                <div class="project__num">05</div>
-                <h3 class="project__title">Remote Robotic Hand Control</h3>
+            <article class="project spotlight reveal">
+                <div class="project__top">
+                    <div class="project__num">04</div>
+                    <span class="project__tag">Robotics</span>
+                </div>
+                <h3 class="project__title">Remote-Controlled Robotic Hand</h3>
                 <p class="project__desc">
-                    Computer vision-based system for controlling robotic hands remotely
-                    using Arduino and real-time gesture recognition.
+                    Gesture-controlled robotic hand using computer vision for remote
+                    teleoperation — real-time gesture recognition driving an actuated hand
+                    from a distance.
                 </p>
                 <div class="project__tech">
                     <span class="tech">Computer Vision</span>
@@ -379,23 +394,38 @@
                 </a>
             </article>
 
-            <article class="project reveal">
-                <div class="project__num">06</div>
+            <article class="project spotlight reveal">
+                <div class="project__top">
+                    <div class="project__num">05</div>
+                    <span class="project__tag">IoT · Vision</span>
+                </div>
                 <h3 class="project__title">Child Companion AI Robot</h3>
                 <p class="project__desc">
-                    Interactive AI robot companion combining computer vision, neural
-                    networks, and IoT integration for educational and entertainment use cases.
+                    IoT companion robot with vision-based child interaction and a Flutter
+                    parental monitoring app — combining neural networks, computer vision,
+                    and edge hardware.
                 </p>
                 <div class="project__tech">
                     <span class="tech">Neural Networks</span>
+                    <span class="tech">Computer Vision</span>
                     <span class="tech">Flutter</span>
                     <span class="tech">IoT</span>
                     <span class="tech">Raspberry Pi</span>
-                    <span class="tech">Arduino</span>
                 </div>
                 <a href="https://youtube.com/watch?v=tHxzrk2d1Vw" class="project__link" target="_blank" rel="noopener">
                     View demo <i class="fas fa-arrow-up-right-from-square"></i>
                 </a>
+            </article>
+
+            <article class="project project--cta reveal">
+                <div class="project__cta-inner">
+                    <i class="fab fa-github"></i>
+                    <h3 class="project__title">More on GitHub</h3>
+                    <p class="project__desc">Explore experiments, agent frameworks, and research code.</p>
+                    <a href="https://github.com/fahimshahryer" class="project__link" target="_blank" rel="noopener">
+                        github.com/fahimshahryer <i class="fas fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
             </article>
         </div>
     </div>
@@ -411,7 +441,7 @@
         </div>
 
         <div class="skills__grid">
-            <div class="skill-group reveal">
+            <div class="skill-group spotlight reveal">
                 <div class="skill-group__head">
                     <div class="skill-group__icon"><i class="fas fa-brain"></i></div>
                     <div class="skill-group__title">AI &amp; LLM Systems</div>
@@ -420,24 +450,25 @@
                     <span class="chip">Agentic AI</span>
                     <span class="chip">RAG Pipelines</span>
                     <span class="chip">Multi-LLM Orchestration</span>
-                    <span class="chip">Prompt Engineering</span>
-                    <span class="chip">Fine-Tuning</span>
-                    <span class="chip">Embedding Pipelines</span>
-                    <span class="chip">Vector Search</span>
-                    <span class="chip">Multi-Tenant AI Architecture</span>
+                    <span class="chip">Custom MCP Servers</span>
+                    <span class="chip">Fine-Tuning (LoRA/QLoRA)</span>
+                    <span class="chip">Vector Search &amp; Embeddings</span>
+                    <span class="chip">Multi-Tenant Architecture</span>
                 </div>
             </div>
 
-            <div class="skill-group reveal">
+            <div class="skill-group spotlight reveal">
                 <div class="skill-group__head">
                     <div class="skill-group__icon"><i class="fas fa-cubes"></i></div>
-                    <div class="skill-group__title">Frameworks &amp; Libraries</div>
+                    <div class="skill-group__title">Frameworks &amp; APIs</div>
                 </div>
                 <div class="skill-group__chips">
                     <span class="chip">LangChain</span>
                     <span class="chip">LangGraph</span>
                     <span class="chip">LlamaIndex</span>
                     <span class="chip">FastAPI</span>
+                    <span class="chip">REST &amp; GraphQL</span>
+                    <span class="chip">SSE / WebSocket</span>
                     <span class="chip">PyTorch</span>
                     <span class="chip">TensorFlow</span>
                     <span class="chip">Scikit-Learn</span>
@@ -445,53 +476,38 @@
                 </div>
             </div>
 
-            <div class="skill-group reveal">
+            <div class="skill-group spotlight reveal">
                 <div class="skill-group__head">
-                    <div class="skill-group__icon"><i class="fas fa-code-branch"></i></div>
-                    <div class="skill-group__title">Backend &amp; APIs</div>
+                    <div class="skill-group__icon"><i class="fas fa-cloud"></i></div>
+                    <div class="skill-group__title">MLOps &amp; Cloud</div>
                 </div>
                 <div class="skill-group__chips">
-                    <span class="chip">Python</span>
-                    <span class="chip">REST APIs</span>
-                    <span class="chip">Real-Time Streaming</span>
-                    <span class="chip">OpenAI</span>
-                    <span class="chip">Anthropic</span>
-                    <span class="chip">Gemini</span>
-                    <span class="chip">Grok</span>
+                    <span class="chip">AWS ECS / EC2</span>
+                    <span class="chip">RDS · S3</span>
+                    <span class="chip">Cognito</span>
+                    <span class="chip">ElastiCache</span>
+                    <span class="chip">Docker</span>
+                    <span class="chip">CI/CD (GitHub Actions)</span>
+                    <span class="chip">Self-Hosted LLMs (vLLM)</span>
+                    <span class="chip">LangSmith</span>
                 </div>
             </div>
 
-            <div class="skill-group reveal">
+            <div class="skill-group spotlight reveal">
                 <div class="skill-group__head">
                     <div class="skill-group__icon"><i class="fas fa-database"></i></div>
                     <div class="skill-group__title">Databases</div>
                 </div>
                 <div class="skill-group__chips">
                     <span class="chip">PostgreSQL · pgvector</span>
-                    <span class="chip">Neo4j</span>
+                    <span class="chip">Neo4j (Graph DB)</span>
                     <span class="chip">Redis</span>
                     <span class="chip">MongoDB</span>
+                    <span class="chip">Weaviate</span>
                 </div>
             </div>
 
-            <div class="skill-group reveal">
-                <div class="skill-group__head">
-                    <div class="skill-group__icon"><i class="fas fa-cloud"></i></div>
-                    <div class="skill-group__title">Cloud &amp; DevOps</div>
-                </div>
-                <div class="skill-group__chips">
-                    <span class="chip">AWS ECS</span>
-                    <span class="chip">EC2</span>
-                    <span class="chip">RDS</span>
-                    <span class="chip">S3</span>
-                    <span class="chip">Cognito</span>
-                    <span class="chip">ElastiCache</span>
-                    <span class="chip">Docker</span>
-                    <span class="chip">GitHub Actions</span>
-                </div>
-            </div>
-
-            <div class="skill-group reveal">
+            <div class="skill-group spotlight reveal">
                 <div class="skill-group__head">
                     <div class="skill-group__icon"><i class="fas fa-terminal"></i></div>
                     <div class="skill-group__title">Languages</div>
@@ -500,6 +516,8 @@
                     <span class="chip">Python</span>
                     <span class="chip">C / C++</span>
                     <span class="chip">SQL</span>
+                    <span class="chip">Bash</span>
+                    <span class="chip">Git</span>
                 </div>
             </div>
         </div>
@@ -512,35 +530,32 @@
         <div class="reveal">
             <div class="section__label">05 / Recognition</div>
             <h2 class="section__title">Awards &amp; recognition.</h2>
-            <p class="section__lede">Selected highlights from competitions, programs, and research.</p>
+            <p class="section__lede">Highlights from competitions, programs, and research.</p>
         </div>
 
         <div class="awards__grid">
-            <div class="award reveal">
+            <div class="award spotlight reveal">
                 <div class="award__year">2025</div>
                 <div>
                     <div class="award__title">Champion — AI Hackathon (Healthcare)</div>
                     <div class="award__org">Bangladesh Innovation Conclave</div>
-                    <div class="award__desc">Managed a team of 3, designed an AI application for the healthcare sector.</div>
+                    <div class="award__desc">Led a team of 3 to design an AI healthcare application.</div>
                     <a href="https://drive.google.com/file/d/1sVeLJ8Zpie8gxOW7krSu9ef_Pc80voIA/view?usp=sharing" class="award__cert" target="_blank" rel="noopener">
                         Certificate <i class="fas fa-arrow-up-right-from-square"></i>
                     </a>
                 </div>
             </div>
 
-            <div class="award reveal">
-                <div class="award__year">2025</div>
+            <div class="award spotlight reveal">
+                <div class="award__year">2024</div>
                 <div>
-                    <div class="award__title">Highest-Ranked Submission — BEAR Summit</div>
-                    <div class="award__org">AI Onsite Display · Code AI-048</div>
-                    <div class="award__desc">Qualified for on-site display among top submissions.</div>
-                    <a href="https://drive.google.com/file/d/1p-nL0_HFF0uoHyOBAjxm61-rAcMr52Rg/view?usp=sharing" class="award__cert" target="_blank" rel="noopener">
-                        Certificate <i class="fas fa-arrow-up-right-from-square"></i>
-                    </a>
+                    <div class="award__title">Global Champion — University Rover Challenge</div>
+                    <div class="award__org">The Mars Society</div>
+                    <div class="award__desc">Competed against 20+ international teams worldwide.</div>
                 </div>
             </div>
 
-            <div class="award reveal">
+            <div class="award spotlight reveal">
                 <div class="award__year">2025</div>
                 <div>
                     <div class="award__title">1st Runner-Up — BEAR Summit (AI Demo)</div>
@@ -552,44 +567,15 @@
                 </div>
             </div>
 
-            <div class="award reveal">
-                <div class="award__year">2024</div>
-                <div>
-                    <div class="award__title">Global Champion — University Rover Challenge</div>
-                    <div class="award__org">The Mars Society</div>
-                    <div class="award__desc">Competed against 20+ teams worldwide.</div>
-                </div>
-            </div>
-
-            <div class="award reveal">
-                <div class="award__year">2023</div>
-                <div>
-                    <div class="award__title">21st Century Employability Skilling Program</div>
-                    <div class="award__org">Wadhwani Foundation · Advanced</div>
-                    <div class="award__desc">Advanced professional development certification.</div>
-                    <a href="https://web.certificate.wfglobal.org/en/certificate?certificateId=65786bd98c30de8667beaa7e" class="award__cert" target="_blank" rel="noopener">
-                        Certificate <i class="fas fa-arrow-up-right-from-square"></i>
-                    </a>
-                </div>
-            </div>
-
-            <div class="award reveal">
+            <div class="award spotlight reveal">
                 <div class="award__year">2023</div>
                 <div>
                     <div class="award__title">EDGE-AI Certification — Top 5%</div>
-                    <div class="award__org">World Bank funded program</div>
-                    <div class="award__desc">Advanced AI specialization with top-tier project performance.</div>
+                    <div class="award__org">World Bank-funded · Bangladesh Computer Council</div>
+                    <div class="award__desc">160-hour enterprise AI specialization program.</div>
                     <a href="https://drive.google.com/file/d/1QCDdYeHA88LXqTvJmktVh7juUbHuvG8u/view?usp=sharing" class="award__cert" target="_blank" rel="noopener">
                         Certificate <i class="fas fa-arrow-up-right-from-square"></i>
                     </a>
-                </div>
-            </div>
-
-            <div class="award reveal">
-                <div class="award__year">2023</div>
-                <div>
-                    <div class="award__title">5th Place — Technovent Hackathon</div>
-                    <div class="award__org">SUST · 48-hour AI/ML innovation challenge</div>
                 </div>
             </div>
         </div>

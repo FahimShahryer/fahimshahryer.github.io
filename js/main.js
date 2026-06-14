@@ -3,6 +3,8 @@
    ============================================================ */
 
 (() => {
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   /* --------- Mobile nav --------- */
   const navList = document.getElementById('nav-list');
   const navToggle = document.getElementById('nav-toggle');
@@ -26,7 +28,7 @@
       const offset = headerEl.offsetHeight + 8;
       window.scrollTo({
         top: target.getBoundingClientRect().top + window.scrollY - offset,
-        behavior: 'smooth',
+        behavior: reduceMotion ? 'auto' : 'smooth',
       });
     });
   });
@@ -49,7 +51,7 @@
   );
   sections.forEach(s => sectionObserver.observe(s));
 
-  /* --------- Reveal-on-scroll --------- */
+  /* --------- Reveal-on-scroll (with stagger for siblings) --------- */
   const reveals = document.querySelectorAll('.reveal');
   const revealObserver = new IntersectionObserver(
     entries => {
@@ -62,22 +64,79 @@
     },
     { threshold: 0.12, rootMargin: '0px 0px -60px 0px' }
   );
+  // stagger items that share a grid container
+  document.querySelectorAll(
+    '.projects__grid, .skills__grid, .awards__grid, .capabilities, .timeline'
+  ).forEach(group => {
+    [...group.querySelectorAll('.reveal')].forEach((el, i) => {
+      el.style.setProperty('--rd', `${Math.min(i, 6) * 70}ms`);
+    });
+  });
   reveals.forEach(el => revealObserver.observe(el));
+
+  /* --------- Count-up stats --------- */
+  const formatCount = (target, value, suffix) => {
+    const isFloat = target % 1 !== 0;
+    const num = isFloat ? value.toFixed(1) : Math.round(value).toString();
+    return num + suffix;
+  };
+  const animateCount = el => {
+    const target = parseFloat(el.dataset.count);
+    const suffix = el.dataset.suffix || '';
+    if (Number.isNaN(target)) return;
+    if (reduceMotion) { el.textContent = formatCount(target, target, suffix); return; }
+    const duration = 1400;
+    const start = performance.now();
+    const tick = now => {
+      const p = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - p, 3); // easeOutCubic
+      el.textContent = formatCount(target, target * eased, suffix);
+      if (p < 1) requestAnimationFrame(tick);
+      else el.textContent = formatCount(target, target, suffix);
+    };
+    requestAnimationFrame(tick);
+  };
+  const statObserver = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCount(entry.target);
+          statObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.6 }
+  );
+  document.querySelectorAll('[data-count]').forEach(el => statObserver.observe(el));
+
+  /* --------- Spotlight (cursor-follow glow) --------- */
+  if (!reduceMotion && window.matchMedia('(hover: hover)').matches) {
+    document.querySelectorAll('.spotlight').forEach(card => {
+      card.addEventListener('pointermove', e => {
+        const r = card.getBoundingClientRect();
+        card.style.setProperty('--mx', `${e.clientX - r.left}px`);
+        card.style.setProperty('--my', `${e.clientY - r.top}px`);
+      });
+    });
+  }
 
   /* --------- Header shadow + scroll progress + scroll-up --------- */
   const progressBar = document.getElementById('scroll-progress');
   const scrollUp = document.getElementById('scroll-up');
+  let ticking = false;
 
   const onScroll = () => {
     const y = window.scrollY;
     headerEl.classList.toggle('scrolled', y > 8);
     scrollUp.classList.toggle('visible', y > 480);
-
     const docH = document.documentElement.scrollHeight - window.innerHeight;
     const pct = docH > 0 ? (y / docH) * 100 : 0;
     progressBar.style.width = `${pct}%`;
+    ticking = false;
   };
-  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('scroll', () => {
+    if (!ticking) { requestAnimationFrame(onScroll); ticking = true; }
+  }, { passive: true });
   onScroll();
 
   /* --------- Theme toggle (default: dark) --------- */
