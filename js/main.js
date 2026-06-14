@@ -172,8 +172,16 @@
     'business-agent': {
       title: 'Bizz — Business Intelligence Agent',
       images: [
-        // 'assets/business-agent/01.png',
-        // 'assets/business-agent/02.png',
+        'assets/bizz/1.png',
+        'assets/bizz/2.png',
+        'assets/bizz/3.png',
+        'assets/bizz/4.png',
+        'assets/bizz/5.png',
+        'assets/bizz/6.png',
+        'assets/bizz/7.png',
+        'assets/bizz/8.png',
+        'assets/bizz/9.png',
+        'assets/bizz/10.png',
       ],
     },
   };
@@ -261,7 +269,7 @@
       const dr = e.target.closest('[data-drive]');
       if (dr) { e.preventDefault(); openDrive(dr.dataset.drive); return; }
       const go = e.target.closest('[data-gallery-open]');
-      if (go) { e.preventDefault(); openGallery(go.dataset.gallery, parseInt(go.dataset.index || '0', 10)); return; }
+      if (go) { e.preventDefault(); openGallery(go.dataset.galleryOpen, parseInt(go.dataset.index || '0', 10)); return; }
     });
   }
 
